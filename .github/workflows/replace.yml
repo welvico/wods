@@ -16,6 +16,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set Git Identity
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"  
+
+      - name: Delete Result Folder
+        run: |
+          if [ -d "result/" ]; then
+            rm -rf result/
+            git rm -r --cached result/
+            git commit -m "Delete Result folder"
+            git push
+          else
+            echo "result/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+
+      - name: Create Result directory
+        run: mkdir -p result    
+
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -33,12 +54,16 @@ jobs:
           ls -R result || echo "result directory is empty"
 
       - name: Execute PHP script
-        run: php replace.php
+        run: php update_templates.php
 
       - name: List result directory contents after execution
         run: |
           echo "Listing result directory after script execution"
           ls -R result
+          echo "Content of result/Fujian_114.txt"
+          cat result/Fujian_114.txt
+          echo "Content of result/Henan_327.txt"
+          cat result/Henan_327.txt
 
       - name: Configure git
         run: |
@@ -48,7 +73,8 @@ jobs:
       - name: Commit and push changes
         run: |
           git add result/*
-          git commit -m "Update result files"
+          git status
+          git commit -m "Update result files" || echo "No changes to commit"
           git push
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
