@@ -20,18 +20,9 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"  
 
-      - name: Delete IP Folder
-        run: |
-          rm -rf ip/
-          git rm -r --cached ip/
-          git commit -m "Delete IP folder" || echo "No files to delete"
-          git push || echo "Push failed"
-        env:
-          PAT: ${{ secrets.GITHUBS_TOKEN }}
-
       - name: Create IP directory
         run: mkdir -p ip
-          
+              
       - name: List template files
         run: |
           find template -type f -name "*.txt" -print > template_files.txt
@@ -88,6 +79,10 @@ jobs:
       - name: Add files to Git
         run: |
           git add result/*.txt
+          
+      - name: Check Git status
+        run: |
+          git status
           
       - name: Commit changes
         run: |
