@@ -2,7 +2,7 @@ name: Update IPTV
 
 on:
   schedule:
-    - cron: '0 6 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
+    - cron: '02 6 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
 
 jobs:
   update-speedtest:
@@ -20,7 +20,7 @@ jobs:
         mkdir -p wods/result
         for template in wods/template/*.txt; do
           region_name=$(basename $template .txt)
-          curl -o wods/result/${region_name}_ips.txt https://github.com/redrainl/iptv/blob/main/speedtest/result/result_${region_name}.txt
+          curl -o wods/result/${region_name}_ips.txt https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt
           ips=$(cat wods/result/${region_name}_ips.txt)
           template_content=$(cat $template)
           for ip in $ips; do
