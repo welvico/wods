@@ -21,7 +21,7 @@ jobs:
         with:
           php-version: '8.0'  # 指定 PHP 版本，根据您的需求选择适当的版本
 
-      - name: List directory contents
+      - name: List directory contents before execution
         run: |
           echo "Listing root directory"
           ls -R
@@ -35,7 +35,20 @@ jobs:
       - name: Execute PHP script
         run: php replace.php
 
-      - name: List result directory contents
+      - name: List result directory contents after execution
         run: |
           echo "Listing result directory after script execution"
           ls -R result
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add result/*
+          git commit -m "Update result files"
+          git push
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
