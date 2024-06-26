@@ -22,7 +22,11 @@ jobs:
         if [ -d "wods/template" ] && [ "$(ls -A wods/template/*.txt 2>/dev/null)" ]; then
           for template in wods/template/*.txt; do
             region_name=$(basename $template .txt)
-            curl -o wods/result/${region_name}_ips.txt -sf https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt
+            curl -sf https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt | while IFS= read -r line; do
+              speed=$(echo $line | awk '{print $1}')
+              ip_port=$(echo $line | awk '{print $2}')
+              echo "${ip_port}" >> wods/result/${region_name}_ips.txt
+            done
             if grep -q "404: Not Found" wods/result/${region_name}_ips.txt; then
               echo "Content not found for region ${region_name}, skipping."
               rm wods/result/${region_name}_ips.txt
