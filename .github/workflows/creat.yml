@@ -103,7 +103,7 @@ jobs:
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
             if [[ -f "ip/${filename}.txt" && -f "template/${filename}.txt" ]]; then
-              content=$(cat "ip/${filename}.txt" | sed 's/[\/&]/\\&/g')  # 对content中的特殊字符进行转义处理
+              content=$(cat "ip/${filename}.txt" | sed -e 's/[\/&]/\\&/g')  # 对content中的特殊字符进行转义处理
               while IFS= read -r line; do
                 if [[ "$line" == *"#genre#"* ]]; then
                   echo "$line" >> "result/${filename}.txt"
@@ -111,8 +111,8 @@ jobs:
                   group=$(echo "$line" | awk -F ',' '{print $1}')
                   url=$(echo "$line" | awk -F ',' '{print $2}')
                   if [[ "$url" == *"ipipip"* ]]; then
-                    content_escaped=$(echo "$content" | sed 's/[\/&]/\\&/g')  # 对content中的特殊字符进行再次转义处理
-                    url=$(echo "$url" | sed "s|ipipip|${content_escaped}|g")
+                    content_escaped=$(echo "$content" | sed -e 's/[\/&]/\\&/g')  # 对content中的特殊字符进行再次转义处理
+                    url=$(echo "$url" | sed -e "s|ipipip|${content_escaped}|g")
                   fi
                   echo "$group,$url" >> "result/${filename}.txt"
                 fi
@@ -121,6 +121,7 @@ jobs:
               echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
           done < template_files.txt
+
 
 
 
