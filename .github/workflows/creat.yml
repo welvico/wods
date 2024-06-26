@@ -62,3 +62,7 @@ jobs:
       - name: Push changes
         run: |
           git push origin HEAD || echo "Push failed"
+
+       - name: Ensure IP directory is clean
+        run: |
+          rm -rf ip && mkdir ip   
