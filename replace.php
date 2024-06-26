@@ -23,6 +23,7 @@ function replaceIpInTemplate($ipFile, $templateFile, $resultFile) {
     // Replace 'ipipip' with each IP address from $ipFile
     foreach ($ipLines as $ip) {
         $templateContent = str_replace('ipipip', $ip, $templateContent);
+        echo "Replaced ipipip with $ip\n";
     }
 
     // Write replaced content to $resultFile
@@ -43,6 +44,7 @@ function main() {
     // Create result directory if it doesn't exist
     if (!is_dir('result')) {
         mkdir('result', 0755, true);
+        echo "Created result directory\n";
     }
 
     // Process Fujian files
