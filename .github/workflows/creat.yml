@@ -1,66 +1,38 @@
-name: Update IPTV
+name: 每日IP提取
 
 on:
   schedule:
-    - cron: '02 22 * * *' # 每天的北京时间06:02启动 (UTC时间22:02)
-  workflow_dispatch: # 手动触发
+    - cron: '0 22 * * *'  # 每天UTC时间的06:00启动（对应北京时间14:00）
+  workflow_dispatch:  # 手动触发
 
 jobs:
-  update-speedtest:
+  extract_ips:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: 检出仓库
+        uses: actions/checkout@v2
 
-    - name: Install curl
-      run: sudo apt-get install -y curl
+      - name: 列出模板文件
+        id: list_files
+        run: |
+          ls template/*.txt | xargs -n 1 basename > files.txt
 
-    - name: Fetch IP data and update templates
-      run: |
-        mkdir -p result
-        if [ -d "template" ] && [ "$(ls -A template/*.txt 2>/dev/null)" ]; then
-          for template in template/*.txt; do
-            region_name=$(basename $template .txt)
-            curl -sf https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt | while IFS= read -r line; do
-              speed=$(echo $line | awk '{print $1}')
-              ip_port=$(echo $line | awk '{print $2}')
-              echo "${ip_port}" >> result/${region_name}_ips.txt
-            done
-            if grep -q "404: Not Found" result/${region_name}_ips.txt; then
-              echo "Content not found for region ${region_name}, skipping."
-              rm result/${region_name}_ips.txt
-            else
-              ips=$(cat result/${region_name}_ips.txt)
-              template_content=$(cat $template)
-              for ip in $ips; do
-                template_content=$(echo "$template_content" | sed "s/ipipip/$ip/g")
-              done
-              echo "$template_content" > result/${region_name}.txt
+      - name: 从模板文件提取IP地址
+        id: extract_ips
+        run: |
+          while IFS= read -r filename; do
+            url="https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_$filename"
+            content=$(curl -sSL "$url")
+            if [ -n "$content" ] && ! echo "$content" | grep -q "404: Not Found"; then
+              echo "$content" | awk '{print $2}' >> "ip/$filename"
             fi
-          done
-        else
-          echo "No template files found in template. Skipping fetch IP data and update templates step."
-        fi
+          done < files.txt
 
-    - name: Combine results
-      run: |
-        if [ -d "result" ] && [ "$(ls -A result/*.txt 2>/dev/null)" ]; then
-          rm -f result/all.txt
-          for result in result/*.txt; do
-            [[ $result == *"_ips.txt" ]] && continue
-            genre=""
-            while IFS= read -r line; do
-              if [[ "$line" == *"#genre#"* ]]; then
-                genre="$line"
-                if ! grep -q "$genre" result/all.txt; then
-                  echo "$genre" >> result/all.txt
-                fi
-              else
-                echo "$line" >> result/all.txt
-              fi
-            done < "$result"
-          done
-        else
-          echo "No result files found in result. Skipping combine results step."
-        fi
+      - name: 提交更改
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ip/*.txt
+          git commit -m "更新IP列表"
+          git push
+
