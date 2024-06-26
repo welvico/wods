@@ -29,6 +29,10 @@ function replaceIpInTemplate($ipFile, $templateFile, $resultFile) {
     // Write replaced content to $resultFile
     file_put_contents($resultFile, $templateContent);
     echo "Replacement completed for $resultFile\n";
+
+    // Print the final content of the result file
+    echo "Content of $resultFile:\n";
+    echo $templateContent;
 }
 
 function main() {
