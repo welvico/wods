@@ -18,6 +18,7 @@ jobs:
       - name: Ensure IP directory is clean
         run: |
           rm -rf ip && mkdir ip
+          touch ip/.keep  # 创建一个空文件以确保目录不为空
           ls -la  # 列出当前目录内容进行调试
           ls -la ip  # 列出 ip 目录内容进行调试
 
