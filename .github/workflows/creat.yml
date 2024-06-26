@@ -24,14 +24,14 @@ jobs:
         run: |
           rm -rf ip/
           git rm -r --cached ip/
-          git commit -m "Delete IP folder"
-          git push
+          git commit -m "Delete IP folder" || echo "No files to delete"
+          git push || echo "Push failed"
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
       - name: Create IP directory
         run: mkdir -p ip
-              
+          
       - name: List template files
         run: |
           find template -type f -name "*.txt" -print > template_files.txt
@@ -51,6 +51,33 @@ jobs:
             fi
           done < template_files.txt
 
+      - name: Replace IP addresses in template files and merge groups
+        run: |
+          rm -rf result
+          mkdir -p result
+          while IFS= read -r file; do
+            filename=$(basename "$file" .txt)
+            echo "Processing file: $filename"
+            while IFS= read -r line; do
+              if [[ "$line" == *"#genre#"* ]]; then
+                echo "$line" >> "result/${filename}.txt"
+              else
+                group=$(echo "$line" | awk -F ',' '{print $1}')
+                url=$(echo "$line" | awk -F ',' '{print $2}')
+                if [[ "$url" == *"#ipipip"* ]]; then
+                  url=$(echo "$url" | sed "s/#ipipip/$content/g")
+                fi
+                echo "$group,$url" >> "result/${filename}.txt"
+              fi
+            done < "template/${filename}.txt"
+          done < template_files.txt
+
+      - name: Combine and deduplicate groups
+        run: |
+          rm -f result/all.txt
+          touch result/all.txt
+          awk '!seen[$0]++' result/*.txt > result/all.txt
+
       - name: Configure Git
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
@@ -60,11 +87,7 @@ jobs:
           
       - name: Add files to Git
         run: |
-          git add ip/*.txt
-          
-      - name: Check Git status
-        run: |
-          git status
+          git add result/*.txt
           
       - name: Commit changes
         run: |
