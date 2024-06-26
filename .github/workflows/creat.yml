@@ -16,34 +16,58 @@ jobs:
     - name: Install curl
       run: sudo apt-get install -y curl
 
-    - name: Fetch IP data and update templates
+    - name: Fetch IP data
       run: |
         mkdir -p wods/result
-        for template in wods/template/*.txt; do
-          region_name=$(basename $template .txt)
-          curl -o wods/result/${region_name}_ips.txt https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt
-          ips=$(cat wods/result/${region_name}_ips.txt)
-          template_content=$(cat $template)
-          for ip in $ips; do
-            template_content=$(echo "$template_content" | sed "s/ipipip/$ip/g")
+        if [ -d "wods/template" ] && [ "$(ls -A wods/template/*.txt 2>/dev/null)" ]; then
+          for template in wods/template/*.txt; do
+            region_name=$(basename $template .txt)
+            curl -o wods/result/${region_name}_ips.txt https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt
+            if grep -q "404: Not Found" wods/result/${region_name}_ips.txt; then
+              echo "Content not found for region ${region_name}, skipping."
+              rm wods/result/${region_name}_ips.txt
+            fi
           done
-          echo "$template_content" > wods/result/${region_name}.txt
-        done
+        else
+          echo "No template files found in wods/template. Skipping fetch IP data step."
+        fi
+
+    - name: Update templates
+      run: |
+        if [ -d "wods/template" ] && [ "$(ls -A wods/template/*.txt 2>/dev/null)" ]; then
+          for template in wods/template/*.txt; do
+            region_name=$(basename $template .txt)
+            if [ -f "wods/result/${region_name}_ips.txt" ]; then
+              ips=$(cat wods/result/${region_name}_ips.txt)
+              template_content=$(cat $template)
+              for ip in $ips; do
+                template_content=$(echo "$template_content" | sed "s/ipipip/$ip/g")
+              done
+              echo "$template_content" > wods/result/${region_name}.txt
+            fi
+          done
+        else
+          echo "No template files found in wods/template. Skipping update templates step."
+        fi
 
     - name: Combine results
       run: |
-        rm -f wods/result/all.txt
-        for result in wods/result/*.txt; do
-          [[ $result == *"_ips.txt" ]] && continue
-          genre=""
-          while IFS= read -r line; do
-            if [[ "$line" == *"#genre#"* ]]; then
-              genre="$line"
-              if ! grep -q "$genre" wods/result/all.txt; then
-                echo "$genre" >> wods/result/all.txt
+        if [ -d "wods/result" ] && [ "$(ls -A wods/result/*.txt 2>/dev/null)" ]; then
+          rm -f wods/result/all.txt
+          for result in wods/result/*.txt; do
+            [[ $result == *"_ips.txt" ]] && continue
+            genre=""
+            while IFS= read -r line; do
+              if [[ "$line" == *"#genre#"* ]]; then
+                genre="$line"
+                if ! grep -q "$genre" wods/result/all.txt; then
+                  echo "$genre" >> wods/result/all.txt
+                fi
+              else
+                echo "$line" >> wods/result/all.txt
               fi
-            else
-              echo "$line" >> wods/result/all.txt
-            fi
-          done < "$result"
-        done
+            done < "$result"
+          done
+        else
+          echo "No result files found in wods/result. Skipping combine results step."
+        fi
