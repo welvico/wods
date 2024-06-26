@@ -15,14 +15,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Ensure IP directory is clean
+      - name: Delete IP directory if exists
         run: |
-          rm -rf ip
-          mkdir ip
-          echo "IP directory cleaned and recreated."
-          touch ip/.keep  # 创建一个空文件以确保目录不为空
-          ls -la  # 列出当前目录内容进行调试
-          ls -la ip  # 列出 ip 目录内容进行调试
+          if [ -d "ip" ]; then
+            rm -rf ip
+          fi
+
+      - name: Create IP directory
+        run: mkdir -p ip
+          
+      - name: Clean up .txt files in IP directory
+        run: |
+          find ip -type f -name "*.txt" -delete
+          echo "Deleted all .txt files in IP directory."     
+
 
       - name: List template files
         run: |
