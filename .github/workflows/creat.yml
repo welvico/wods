@@ -19,19 +19,18 @@ jobs:
         run: mkdir -p ip
 
       - name: List template files
-        id: list_files
         run: |
-          echo "::set-output name=files::$(ls template/*.txt)"
+          find template -type f -name "*.txt" -print > template_files.txt
+          cat template_files.txt
 
       - name: Extract IPs from template files
         run: |
-          files="${{ steps.list_files.outputs.files }}"
-          for file in $files; do
-            filename=$(basename $file .txt)
+          while IFS= read -r file; do
+            filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
             curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
             cat "ip/${filename}.txt"  # 输出文件内容以便调试
-          done
+          done < template_files.txt
 
       - name: Configure Git
         env:
