@@ -36,26 +36,28 @@ function replaceIpInTemplate($ipFile, $templateFile, $resultFile) {
 }
 
 function main() {
-    // Paths to your files
-    $ipFujian = 'ip/Fujian_114.txt';
-    $templateFujian = 'template/Fujian_114.txt';
-    $resultFujian = 'result/Fujian_114.txt';
-
-    $ipHenan = 'ip/Henan_327.txt';
-    $templateHenan = 'template/Henan_327.txt';
-    $resultHenan = 'result/Henan_327.txt';
+    $templateDir = 'template/';
+    $resultDir = 'result/';
 
     // Create result directory if it doesn't exist
-    if (!is_dir('result')) {
-        mkdir('result', 0755, true);
+    if (!is_dir($resultDir)) {
+        mkdir($resultDir, 0755, true);
         echo "Created result directory\n";
     }
 
-    // Process Fujian files
-    replaceIpInTemplate($ipFujian, $templateFujian, $resultFujian);
+    // Get all files in template directory
+    $templateFiles = glob($templateDir . '*.txt');
+    
+    // Process each template file
+    foreach ($templateFiles as $templateFile) {
+        // Construct paths for IP, template, and result files
+        $templateFileName = basename($templateFile);
+        $ipFile = 'ip/' . $templateFileName;
+        $resultFile = $resultDir . $templateFileName;
 
-    // Process Henan files
-    replaceIpInTemplate($ipHenan, $templateHenan, $resultHenan);
+        // Process files using the existing function
+        replaceIpInTemplate($ipFile, $templateFile, $resultFile);
+    }
 }
 
 main();
