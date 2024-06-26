@@ -15,14 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Delete IP directory if exists
+      - name: Ensure IP directory is clean
         run: |
           if [ -d "ip" ]; then
-            rm -rf ip
+            rm -rf ip/*
+          else
+            mkdir -p ip
           fi
-
-      - name: Create IP directory
-        run: mkdir -p ip
 
       - name: List template files
         run: |
