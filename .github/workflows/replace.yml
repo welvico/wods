@@ -9,29 +9,21 @@ permissions:
   contents: write
 
 jobs:
-  process_templates:
-    runs-on: ubuntu-latest  # 指定使用最新的 Ubuntu 环境，可以根据需要选择其他环境
-
+  update_templates:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2  # 检出代码到工作目录
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v2  # 设置 Python 环境
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyyaml  # 如果您的脚本依赖于 PyYAML
+        pip install -r requirements.txt  # 如果需要特定的依赖包，请在 requirements.txt 中列出
 
-    - name: Run process_templates.py
-      run: python process_templates.py config.yml  # 根据实际情况修改命令
-
-    - name: Commit and push changes if any
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Update result files [skip ci]" || true
-        git push
-
+    - name: Execute Python script
+      run: python process_templates.py
