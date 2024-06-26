@@ -38,7 +38,7 @@ jobs:
 
       - name: 提交更改
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 使用个人访问令牌（PAT）进行推送
+          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}  # 使用访问令牌（PAT）进行推送
         run: |
           git add ip/*.txt
           git commit -m "更新IP列表"
