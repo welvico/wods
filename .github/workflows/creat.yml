@@ -31,13 +31,7 @@ jobs:
 
       - name: Create IP directory
         run: mkdir -p ip
-          
-      - name: Clean up .txt files in IP directory
-        run: |
-          find ip -type f -name "*.txt" -delete
-          echo "Deleted all .txt files in IP directory."     
-
-
+              
       - name: List template files
         run: |
           find template -type f -name "*.txt" -print > template_files.txt
