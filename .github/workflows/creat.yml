@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # 手动触发
 
 jobs:
-  update-speedtest:
+  update-iptv:
     runs-on: ubuntu-latest
 
     steps:
