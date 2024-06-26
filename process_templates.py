@@ -1,8 +1,10 @@
 import os
 
 def replace_ip_in_template(ip_file, template_file, result_file):
-    with open(ip_file, 'r') as ip_f, open(template_file, 'r') as template_f:
+    with open(ip_file, 'r') as ip_f:
         ip_lines = ip_f.readlines()
+
+    with open(template_file, 'r') as template_f:
         template_content = template_f.read()
 
     replaced_content = template_content
