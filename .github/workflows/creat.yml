@@ -1,45 +1,42 @@
-name: 每日IP提取
-
+name: Fetch IP Addresses
 on:
   schedule:
-    - cron: '0 22 * * *'  # 每天UTC时间的06:00启动（对应北京时间14:00）
-  workflow_dispatch:  # 手动触发
+    - cron: '0 22 * * *'  # Beijing time 06:00 UTC is 14:00 UTC, so 22:00 UTC the previous day
+  workflow_dispatch:
 
 jobs:
-  extract_ips:
+  fetch_ips:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出仓库
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: 设置git用户信息
+      - name: List templates
+        id: list_templates
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          templates=$(ls template/*.txt)
+          echo "::set-output name=templates::$templates"
 
-      - name: 创建ip目录
-        run: mkdir -p ip
-      
-      - name: 列出模板文件
-        id: list_files
+      - name: Generate IP URLs
+        id: generate_urls
         run: |
-          ls template/*.txt | xargs -n 1 basename > files.txt
+          templates="$INPUT_TEMPLATES"
+          urls=""
+          for template in $templates; do
+            filename=$(basename "$template")
+            region=${filename%.*}
+            urls+="https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region}.txt\n"
+          done
+          echo "::set-output name=urls::$urls"
 
-      - name: 从模板文件提取IP地址
-        id: extract_ips
+      - name: Fetch and process IPs
+        id: fetch_ips
         run: |
-          while IFS= read -r filename; do
-            url="https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_$filename"
+          urls="$INPUT_URLS"
+          while IFS= read -r url; do
             content=$(curl -sSL "$url")
-            if [ -n "$content" ] && ! echo "$content" | grep -q "404: Not Found"; then
-              echo "$content" | awk '{print $2}' >> "ip/$filename"
-            fi
-          done < files.txt
-
-      - name: 提交更改
+            echo "$content" | grep -oP '\S+:\d+' >> ip/hebei.txt
+          done <<< "$urls"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}  # 使用访问令牌（PAT）进行推送
-        run: |
-          git add ip/*.txt
-          git commit -m "更新IP列表"
-          git push --set-upstream origin $GITHUB_REF
+          INPUT_URLS: ${{ steps.generate_urls.outputs.urls }}
+          INPUT_TEMPLATES: ${{ steps.list_templates.outputs.templates }}
