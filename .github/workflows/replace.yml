@@ -54,7 +54,7 @@ jobs:
           ls -R result || echo "result directory is empty"
 
       - name: Execute PHP script
-        run: php update_templates.php
+        run: php replace.php
 
       - name: List result directory contents after execution
         run: |
