@@ -2,7 +2,7 @@ name: Run Process Templates
 
 on:
   schedule:
-    - cron: '0 22 * * *'  # 北京时间每天早上6点执行
+    - cron: '0 22 * * *'  # 每天北京时间早上6点执行
   workflow_dispatch:  # 手动触发
 
 permissions:
@@ -19,14 +19,14 @@ jobs:
       - name: Set Git Identity
         run: |
           git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"  
+          git config --global user.name "GitHub Actions"
 
       - name: Delete Result Folder
         run: |
           if [ -d "result/" ]; then
             rm -rf result/
             git rm -r --cached result/
-            git commit -m "Delete Result folder"
+            git commit -m "Delete Result folder" || echo "No changes to commit"
             git push
           else
             echo "result/ directory not found, skipping deletion"
@@ -35,12 +35,12 @@ jobs:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
       - name: Create Result directory
-        run: mkdir -p result    
+        run: mkdir -p result
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'  # 指定 PHP 版本，根据您的需求选择适当的版本
+          php-version: '8.0'  # 根据需求选择 PHP 版本
 
       - name: List directory contents before execution
         run: |
@@ -53,17 +53,15 @@ jobs:
           echo "Listing result directory (should be empty initially)"
           ls -R result || echo "result directory is empty"
 
-      - name: Execute PHP script
+      - name: Execute PHP script to merge files
         run: php replace.php
 
       - name: List result directory contents after execution
         run: |
           echo "Listing result directory after script execution"
           ls -R result
-          echo "Content of result/Fujian_114.txt"
-          cat result/Fujian_114.txt
-          echo "Content of result/Henan_327.txt"
-          cat result/Henan_327.txt
+          echo "Content of result/all.txt"
+          cat result/all.txt
 
       - name: Configure git
         run: |
