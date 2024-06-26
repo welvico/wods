@@ -99,21 +99,21 @@ jobs:
         run: |
           rm -rf result
           mkdir -p result
-          
+      
           while IFS= read -r file; do
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
-            
+      
             if [[ -f "ip/${filename}.txt" && -f "template/${filename}.txt" ]]; then
-              
+      
               content=$(cat "ip/${filename}.txt")
-              content_escaped=$(echo "$content" | sed 's|/|&slash;|g')
-              
+              content_escaped=$(echo "$content" | sed -e 's/[\/&]/\\&/g')
+      
               while IFS= read -r line; do
                 if [[ "$line" == *"#genre#"* ]]; then
-                  echo "$line" >> "result/${filename}.txt"
-                else  
-                  group=$(echo "$line" | awk -F ',' '{print $1}') 
+                  echo "$line" >> "result/${filename}.txt"  
+                else
+                  group=$(echo "$line" | awk -F ',' '{print $1}')
                   url=$(echo "$line" | awk -F ',' '{print $2}')
                   if [[ "$url" == *"ipipip"* ]]; then
                     url=$(echo "$url" | sed "s|ipipip|${content_escaped}|")
@@ -121,9 +121,9 @@ jobs:
                   echo "$group,$url" >> "result/${filename}.txt"
                 fi
               done < "template/${filename}.txt"
-              
+      
             else
-              echo "Skipping processing for file: $filename. Corresponding IP or template file not found."  
+              echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
           done < template_files.txt
 
