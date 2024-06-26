@@ -25,7 +25,8 @@ jobs:
 
       - name: Extract IPs from template files
         run: |
-          for file in ${{ steps.list_files.outputs.files }}; do
+          files="${{ steps.list_files.outputs.files }}"
+          for file in $files; do
             filename=$(basename $file .txt)
             curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
           done
@@ -36,11 +37,15 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-
-      - name: Commit and push changes
-        env:
-          PAT: ${{ secrets.GITHUBS_TOKEN }}
+          
+      - name: Add files to Git
         run: |
           git add ip/*.txt
+          
+      - name: Commit changes
+        run: |
           git commit -m "Update IP files"
+          
+      - name: Push changes
+        run: |
           git push origin HEAD
