@@ -1,8 +1,8 @@
 name: Run Process Templates
 
 on:
-  schedule:
-    - cron: '0 22 * * *'  # 每天北京时间早上6点执行
+  #schedule:
+    #- cron: '0 22 * * *'  # 每天北京时间早上6点执行
   workflow_dispatch:  # 手动触发
 
 permissions:
