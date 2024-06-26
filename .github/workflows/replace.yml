@@ -20,11 +20,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Clean up pip cache and reinstall
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip cache purge
-        python -m pip install -r requirements.txt  # 如果有 requirements.txt，请确保它在您的仓库中并包含所需的依赖
+        python -m pip install -r requirements.txt  # 确保 requirements.txt 存在并包含所需的依赖
 
     - name: Execute Python script
       run: python process_templates.py
