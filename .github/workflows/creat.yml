@@ -33,8 +33,24 @@ jobs:
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
+      - name: Delete Result Folder
+        run: |
+          if [ -d "result/" ]; then
+            rm -rf result/
+            git rm -r --cached result/
+            git commit -m "Delete Result folder"
+            git push
+          else
+            echo "result/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+          
       - name: Create IP directory
         run: mkdir -p ip
+
+      - name: Create Result directory
+        run: mkdir -p result
               
       - name: List template files
         run: |
