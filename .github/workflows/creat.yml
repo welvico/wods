@@ -2,7 +2,7 @@ name: Update IPTV
 
 on:
   schedule:
-    - cron: '0 22 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
+    - cron: '58 5 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
 
 jobs:
   update-speedtest:
