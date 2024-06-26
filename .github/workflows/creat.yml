@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Create IP directory
+        run: mkdir -p ip
+
       - name: List template files
         id: list_files
         run: |
@@ -21,7 +24,6 @@ jobs:
         run: |
           for file in ${{ steps.list_files.outputs.files }}; do
             filename=$(basename $file .txt)
-            result_file="result/${filename}.txt"
             curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
           done
 
