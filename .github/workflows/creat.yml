@@ -34,7 +34,7 @@ jobs:
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
             content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
-            if [[ -n "$content" && "$content" != "404: Not Found" ]]; then
+            if [[ -n "$content" && "$content" != "404: Not Found" && "$content" != "Not" ]]; then
               echo "$content" > "ip/${filename}.txt"
               cat "ip/${filename}.txt"  # 输出文件内容以便调试
             else
