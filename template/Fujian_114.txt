@@ -1,4 +1,4 @@
-央视,#genre#
+央视节目,#genre#
 CCTV-1 综合,http://ipipip/rtp/239.61.3.61:9884$福建电信
 CCTV-2 财经,http://ipipip/rtp/239.61.2.174:9032$福建电信
 CCTV-3 综艺,http://ipipip/rtp/239.61.3.34:9722$福建电信
@@ -19,7 +19,8 @@ CCTV-17 农业农村,http://ipipip/rtp/239.61.3.9:9572$福建电信
 CCTV-1 综合,http://ipipip/rtp/239.61.3.60:9878$福建电信
 CGTN,http://ipipip/rtp/239.61.2.19:8108$福建电信
 
-卫视,#genre#
+卫视节目,#genre#
+河南卫视,http://ipipip/rtp/239.61.2.59:8348$福建电信
 东方卫视,http://ipipip/rtp/239.61.2.28:8162$福建电信
 湖南卫视,http://ipipip/rtp/239.61.2.31:8180$福建电信
 江苏卫视,http://ipipip/rtp/239.61.2.30:8174$福建电信
@@ -40,7 +41,6 @@ CGTN,http://ipipip/rtp/239.61.2.19:8108$福建电信
 北京卫视,http://ipipip/rtp/239.61.2.32:8186$福建电信
 云南卫视,http://ipipip/rtp/239.61.2.61:8360$福建电信
 东南卫视,http://ipipip/rtp/239.61.2.132:8708$福建电信
-河南卫视,http://ipipip/rtp/239.61.2.59:8348$福建电信
 海南卫视,http://ipipip/rtp/239.61.2.42:8246$福建电信
 广西卫视,http://ipipip/rtp/239.61.2.48:8282$福建电信
 陕西卫视,http://ipipip/rtp/239.61.2.38:8222$福建电信
@@ -61,7 +61,7 @@ CGTN,http://ipipip/rtp/239.61.2.19:8108$福建电信
 中国教育-2,http://ipipip/rtp/239.61.3.6:9554$福建电信
 中国教育-4,http://ipipip/rtp/239.61.3.15:9608$福建电信
 
-少儿,#genre#
+少儿节目,#genre#
 金鹰卡通,http://ipipip/rtp/239.61.2.221:9314$福建电信
 卡酷少儿,http://ipipip/rtp/239.61.2.222:9320$福建电信
 哈哈炫动,http://ipipip/rtp/239.61.2.70:8414$福建电信
@@ -69,10 +69,10 @@ CGTN,http://ipipip/rtp/239.61.2.19:8108$福建电信
 嘉佳卡通,http://ipipip/rtp/239.61.2.72:8426$福建电信
 新动漫,http://ipipip/rtp/239.61.3.18:9628$福建电信
 
-电影,#genre#
+电影节目,#genre#
 CHC动作电影,http://ipipip/rtp/239.61.3.16:9616$福建电信
 
-数字,#genre#
+数字节目,#genre#
 凤凰卫视资讯台,http://ipipip/rtp/239.61.2.183:9086$福建电信
 凤凰卫视中文台,http://ipipip/rtp/239.61.2.184:9092$福建电信
 纪实人文,http://ipipip/rtp/239.61.2.165:8978$福建电信
