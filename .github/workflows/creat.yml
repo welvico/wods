@@ -1,0 +1,48 @@
+name: Update IPTV 
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
+
+jobs:
+  update-speedtest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install curl
+      run: sudo apt-get install -y curl
+
+    - name: Fetch IP data and update templates
+      run: |
+        mkdir -p wods/result
+        for template in wods/template/*.txt; do
+          region_name=$(basename $template .txt)
+          curl -o wods/result/${region_name}_ips.txt https://github.com/redrainl/iptv/blob/main/speedtest/result/result_${region_name}.txt
+          ips=$(cat wods/result/${region_name}_ips.txt)
+          template_content=$(cat $template)
+          for ip in $ips; do
+            template_content=$(echo "$template_content" | sed "s/ipipip/$ip/g")
+          done
+          echo "$template_content" > wods/result/${region_name}.txt
+        done
+
+    - name: Combine results
+      run: |
+        rm -f wods/result/all.txt
+        for result in wods/result/*.txt; do
+          [[ $result == *"_ips.txt" ]] && continue
+          genre=""
+          while IFS= read -r line; do
+            if [[ "$line" == *"#genre#"* ]]; then
+              genre="$line"
+              if ! grep -q "$genre" wods/result/all.txt; then
+                echo "$genre" >> wods/result/all.txt
+              fi
+            else
+              echo "$line" >> wods/result/all.txt
+            fi
+          done < "$result"
+        done
