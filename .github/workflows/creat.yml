@@ -15,8 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Create IP directory
-        run: mkdir -p ip
+      - name: Clean IP directory
+        run: |
+          rm -rf ip
+          mkdir -p ip
 
       - name: List template files
         run: |
