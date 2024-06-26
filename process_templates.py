@@ -23,6 +23,9 @@ def main():
     template_henan = 'template/Henan_327.txt'
     result_henan = 'result/Henan_327.txt'
 
+    # Create result directory if it doesn't exist
+    os.makedirs('result', exist_ok=True)
+
     # Process Fujian files
     replace_ip_in_template(ip_fujian, template_fujian, result_fujian)
 
