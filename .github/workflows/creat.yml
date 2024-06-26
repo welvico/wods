@@ -110,7 +110,7 @@ jobs:
                   group=$(echo "$line" | awk -F ',' '{print $1}')
                   url=$(echo "$line" | awk -F ',' '{print $2}')
                   if [[ "$url" == *"ipipip"* ]]; then
-                    url=$(echo "$url" | sed "s/ipipip/$content/g")
+                    url=$(echo "$url" | sed "s|ipipip|${content}|g")
                   fi
                   echo "$group,$url" >> "result/${filename}.txt"
                 fi
@@ -119,6 +119,7 @@ jobs:
               echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
           done < template_files.txt
+
 
 
       - name: Combine and deduplicate groups
