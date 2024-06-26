@@ -1,4 +1,4 @@
-name: autoUpdate TV
+name: Daily IP Collection and Template Processing
 
 on:
   schedule:
@@ -33,12 +33,14 @@ jobs:
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
-      - name: Delete Result Folder
+      - name: Delete Result Files
         run: |
           if [ -d "result/" ]; then
-            rm -rf result/
-            git rm -r --cached result/
-            git commit -m "Delete Result folder" || echo "No changes to commit"
+            rm -f 'result/Fujian_114.txt'
+            rm -f 'result/Henan_327.txt'
+            rm -f 'result/all.txt'
+            git rm 'result/Fujian_114.txt' 'result/Henan_327.txt' 'result/all.txt'
+            git commit -m "Delete result files" || echo "No changes to commit"
             git push
           else
             echo "result/ directory not found, skipping deletion"
