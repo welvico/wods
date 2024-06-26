@@ -1,10 +1,6 @@
 <?php
 
 function mergeFilesByGroup($templateDir, $resultFile) {
-    // Check if Henan_327.txt template file exists
-    $templateHenan = $templateDir . 'Henan_327.txt';
-    $templateExists = file_exists($templateHenan);
-
     // Open or create the result file
     $resultHandle = fopen($resultFile, 'w');
     if (!$resultHandle) {
@@ -15,14 +11,37 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     // Array to store merged content by group
     $mergedContent = [];
 
-    // Get all template files
+    // Check if template/Henan_327.txt exists
+    $henanTemplateFile = $templateDir . 'Henan_327.txt';
+    if (file_exists($henanTemplateFile)) {
+        // Read Henan_327.txt content first
+        $henanLines = file($henanTemplateFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $currentGroup = '';
+
+        // Process each line in Henan_327.txt
+        foreach ($henanLines as $line) {
+            if (strpos($line, ',#genre#') !== false) {
+                $currentGroup = $line;
+                continue;
+            }
+
+            // Add line to merged content under current group
+            if (!empty($currentGroup)) {
+                if (!isset($mergedContent[$currentGroup])) {
+                    $mergedContent[$currentGroup] = [];
+                }
+                $mergedContent[$currentGroup][] = $line;
+            }
+        }
+    }
+
+    // Get all other template files
     $templateFiles = glob($templateDir . '*.txt');
 
-    // Process each template file
+    // Process each template file (excluding Henan_327.txt)
     foreach ($templateFiles as $templateFile) {
-        // Skip Henan_327.txt if it exists (we handle it separately)
-        if ($templateFile === $templateHenan) {
-            continue;
+        if ($templateFile === $henanTemplateFile) {
+            continue; // Skip Henan_327.txt since it's already processed
         }
 
         $lines = file($templateFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -45,24 +64,13 @@ function mergeFilesByGroup($templateDir, $resultFile) {
         }
     }
 
-    // Write template/Henan_327.txt content first if exists
-    if ($templateExists) {
-        $henanLines = file($templateHenan, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($henanLines as $line) {
+    // Write merged content to result file
+    foreach ($mergedContent as $group => $content) {
+        fwrite($resultHandle, "$group\n");
+        foreach ($content as $line) {
             fwrite($resultHandle, "$line\n");
         }
         fwrite($resultHandle, "\n");
-    }
-
-    // Write merged content to result file, excluding Henan_327.txt
-    foreach ($mergedContent as $group => $content) {
-        if (strpos($group, ',#genre#') === false) { // Skip the template file's header line
-            fwrite($resultHandle, "$group\n");
-            foreach ($content as $line) {
-                fwrite($resultHandle, "$line\n");
-            }
-            fwrite($resultHandle, "\n");
-        }
     }
 
     // Close the result file handle
