@@ -22,12 +22,11 @@ function replaceIpInTemplate($ipFile, $templateFile, $resultFile) {
 
     // Replace 'ipipip' with each IP address from $ipFile
     foreach ($ipLines as $ip) {
-        $replacedContent = preg_replace('/ipipip/', $ip, $templateContent, 1);
-        $templateContent = $replacedContent; // Update template content for next iteration
+        $templateContent = str_replace('ipipip', $ip, $templateContent);
     }
 
     // Write replaced content to $resultFile
-    file_put_contents($resultFile, $replacedContent);
+    file_put_contents($resultFile, $templateContent);
     echo "Replacement completed for $resultFile\n";
 }
 
