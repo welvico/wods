@@ -33,7 +33,7 @@ jobs:
 
       - name: 提交更改
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}  # 使用 GitHub 提供的 GITHUB_TOKEN 来进行推送
+          GH_TOKEN: ${{ secrets.GITHUBS_TOKEN }}  #  使用个人访问令牌（PAT）进行推送
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
