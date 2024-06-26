@@ -22,10 +22,14 @@ jobs:
 
       - name: Delete IP Folder
         run: |
-          rm -rf ip/
-          git rm -r --cached ip/
-          git commit -m "Delete IP folder"
-          git push
+          if [ -d "ip/" ]; then
+            rm -rf ip/
+            git rm -r --cached ip/
+            git commit -m "Delete IP folder"
+            git push
+          else
+            echo "ip/ directory not found, skipping deletion"
+          fi
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
