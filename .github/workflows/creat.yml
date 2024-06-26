@@ -111,7 +111,7 @@ jobs:
                   group=$(echo "$line" | awk -F ',' '{print $1}')
                   url=$(echo "$line" | awk -F ',' '{print $2}')
                   if [[ "$url" == *"ipipip"* ]]; then
-                    content_escaped=$(echo "$content" | sed -e 's/[\/&]/\\&/g')  # Escape content again for replacement
+                    content_escaped=$(echo "$content" | sed -e 's/[\/&]/\\&/g' -e 's/\$/\\$/g')  # Escape content again for replacement, including '$'
                     url=$(echo "$url" | sed -e "s|ipipip|${content_escaped}|g")
                   fi
                   echo "$group,$url" >> "result/${filename}.txt"
@@ -121,6 +121,7 @@ jobs:
               echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
           done < template_files.txt
+
 
 
 
