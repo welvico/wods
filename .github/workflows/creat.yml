@@ -18,49 +18,49 @@ jobs:
 
     - name: Fetch IP data and update templates
       run: |
-        mkdir -p wods/result
-        if [ -d "wods/template" ] && [ "$(ls -A wods/template/*.txt 2>/dev/null)" ]; then
-          for template in wods/template/*.txt; do
+        mkdir -p result
+        if [ -d "template" ] && [ "$(ls -A template/*.txt 2>/dev/null)" ]; then
+          for template in template/*.txt; do
             region_name=$(basename $template .txt)
             curl -sf https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${region_name}.txt | while IFS= read -r line; do
               speed=$(echo $line | awk '{print $1}')
               ip_port=$(echo $line | awk '{print $2}')
-              echo "${ip_port}" >> wods/result/${region_name}_ips.txt
+              echo "${ip_port}" >> result/${region_name}_ips.txt
             done
-            if grep -q "404: Not Found" wods/result/${region_name}_ips.txt; then
+            if grep -q "404: Not Found" result/${region_name}_ips.txt; then
               echo "Content not found for region ${region_name}, skipping."
-              rm wods/result/${region_name}_ips.txt
+              rm result/${region_name}_ips.txt
             else
-              ips=$(cat wods/result/${region_name}_ips.txt)
+              ips=$(cat result/${region_name}_ips.txt)
               template_content=$(cat $template)
               for ip in $ips; do
                 template_content=$(echo "$template_content" | sed "s/ipipip/$ip/g")
               done
-              echo "$template_content" > wods/result/${region_name}.txt
+              echo "$template_content" > result/${region_name}.txt
             fi
           done
         else
-          echo "No template files found in wods/template. Skipping fetch IP data and update templates step."
+          echo "No template files found in template. Skipping fetch IP data and update templates step."
         fi
 
     - name: Combine results
       run: |
-        if [ -d "wods/result" ] && [ "$(ls -A wods/result/*.txt 2>/dev/null)" ]; then
-          rm -f wods/result/all.txt
-          for result in wods/result/*.txt; do
+        if [ -d "result" ] && [ "$(ls -A result/*.txt 2>/dev/null)" ]; then
+          rm -f result/all.txt
+          for result in result/*.txt; do
             [[ $result == *"_ips.txt" ]] && continue
             genre=""
             while IFS= read -r line; do
               if [[ "$line" == *"#genre#"* ]]; then
                 genre="$line"
-                if ! grep -q "$genre" wods/result/all.txt; then
-                  echo "$genre" >> wods/result/all.txt
+                if ! grep -q "$genre" result/all.txt; then
+                  echo "$genre" >> result/all.txt
                 fi
               else
-                echo "$line" >> wods/result/all.txt
+                echo "$line" >> result/all.txt
               fi
             done < "$result"
           done
         else
-          echo "No result files found in wods/result. Skipping combine results step."
+          echo "No result files found in result. Skipping combine results step."
         fi
