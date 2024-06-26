@@ -15,10 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Delete and recreate IP directory
+      - name: Ensure IP directory is clean
         run: |
-          rm -rf ip
-          mkdir ip
+          rm -rf ip && mkdir ip
 
       - name: List template files
         run: |
