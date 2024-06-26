@@ -21,7 +21,21 @@ jobs:
         with:
           php-version: '8.0'  # 指定 PHP 版本，根据您的需求选择适当的版本
 
-      - name: Execute PHP script
+      - name: List directory contents
         run: |
-          php replace.php  # 替换为您的 PHP 脚本文件名
+          echo "Listing root directory"
+          ls -R
+          echo "Listing ip directory"
+          ls -R ip
+          echo "Listing template directory"
+          ls -R template
+          echo "Listing result directory (should be empty initially)"
+          ls -R result || echo "result directory is empty"
 
+      - name: Execute PHP script
+        run: php update_templates.php
+
+      - name: List result directory contents
+        run: |
+          echo "Listing result directory after script execution"
+          ls -R result
