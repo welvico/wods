@@ -28,7 +28,9 @@ jobs:
           files="${{ steps.list_files.outputs.files }}"
           for file in $files; do
             filename=$(basename $file .txt)
+            echo "Processing file: $filename"
             curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
+            cat "ip/${filename}.txt"  # 输出文件内容以便调试
           done
 
       - name: Configure Git
@@ -42,10 +44,14 @@ jobs:
         run: |
           git add ip/*.txt
           
+      - name: Check Git status
+        run: |
+          git status
+          
       - name: Commit changes
         run: |
-          git commit -m "Update IP files"
+          git commit -m "Update IP files" || echo "Nothing to commit"
           
       - name: Push changes
         run: |
-          git push origin HEAD
+          git push origin HEAD || echo "Push failed"
