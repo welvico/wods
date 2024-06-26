@@ -3,7 +3,8 @@ name: Update IPTV
 on:
   schedule:
     - cron: '02 6 * * *' # 每天的北京时间06:00启动 (UTC时间22:00)
-
+    workflow_dispatch: # 手动触发
+   
 jobs:
   update-speedtest:
     runs-on: ubuntu-latest
