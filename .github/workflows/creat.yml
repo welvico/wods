@@ -94,6 +94,7 @@ jobs:
         run: |
           git push origin HEAD || echo "Push failed"
 
+
       - name: Replace IP addresses in template files and merge groups
         run: |
           rm -rf result
@@ -120,6 +121,7 @@ jobs:
               echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
           done < template_files.txt
+
 
 
 
