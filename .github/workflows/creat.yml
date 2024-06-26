@@ -12,6 +12,9 @@ jobs:
       - name: 检出仓库
         uses: actions/checkout@v2
 
+      - name: 创建ip目录
+        run: mkdir -p ip
+      
       - name: 列出模板文件
         id: list_files
         run: |
