@@ -32,10 +32,11 @@ jobs:
           done < files.txt
 
       - name: 提交更改
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}  # 使用 GitHub 提供的 GITHUB_TOKEN 来进行推送
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ip/*.txt
           git commit -m "更新IP列表"
-          git push
-
+          git push --set-upstream origin $GITHUB_REF
