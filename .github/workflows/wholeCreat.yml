@@ -97,7 +97,7 @@ jobs:
             rm -rf result/
             git rm -r --cached result/
             git commit -m "Delete Result folder" || echo "No changes to commit"
-            git pull
+            git pull --rebase
             git push
           else
             echo "result/ directory not found, skipping deletion"
