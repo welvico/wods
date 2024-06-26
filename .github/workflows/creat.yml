@@ -28,8 +28,13 @@ jobs:
           while IFS= read -r file; do
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
-            curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
-            cat "ip/${filename}.txt"  # 输出文件内容以便调试
+            content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
+            if [[ -n "$content" && "$content" != "404: Not Found" ]]; then
+              echo "$content" > "ip/${filename}.txt"
+              cat "ip/${filename}.txt"  # 输出文件内容以便调试
+            else
+              echo "Skipping file: $filename because content is empty or '404: Not Found'"
+            fi
           done < template_files.txt
 
       - name: Configure Git
