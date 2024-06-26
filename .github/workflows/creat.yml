@@ -103,20 +103,21 @@ jobs:
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
             if [[ -f "ip/${filename}.txt" && -f "template/${filename}.txt" ]]; then
-              content=$(cat "ip/${filename}.txt" | sed -e 's/[\/&]/\\&/g')  # Escape special characters in content
+              content=$(cat "ip/${filename}.txt")  
+              content_escaped=$(echo "$content" | sed -e 's/\//\\\//g' -e 's/\./\\\./g')
+      
               while IFS= read -r line; do
                 if [[ "$line" == *"#genre#"* ]]; then
                   echo "$line" >> "result/${filename}.txt"
-                else
+                else  
                   group=$(echo "$line" | awk -F ',' '{print $1}')
                   url=$(echo "$line" | awk -F ',' '{print $2}')
                   if [[ "$url" == *"ipipip"* ]]; then
-                    content_escaped=$(echo "$content" | sed -e 's/[\/&]/\\&/g' -e 's/\$/\\$/g')  # Escape content again for replacement, including '$'
                     url=$(echo "$url" | sed -e "s|ipipip|${content_escaped}|g")
                   fi
                   echo "$group,$url" >> "result/${filename}.txt"
                 fi
-              done < "template/${filename}.txt"
+              done < "template/${filename}.txt"  
             else
               echo "Skipping processing for file: $filename. Corresponding IP or template file not found."
             fi
