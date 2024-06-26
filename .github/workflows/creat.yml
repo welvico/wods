@@ -15,11 +15,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Delete IP directory if exists
+      - name: Delete IP Folder
         run: |
-          if [ -d "ip" ]; then
-            rm -rf ip
-          fi
+          rm -rf ip/
+          git rm -r --cached ip/
+          git commit -m "Delete IP folder"
+          git push
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
 
       - name: Create IP directory
         run: mkdir -p ip
