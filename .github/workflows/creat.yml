@@ -27,10 +27,17 @@ jobs:
             curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}' > "ip/${filename}.txt"
           done
 
-      - name: Commit and push changes
+      - name: Configure Git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN }}
+        run: |
           git add ip/*.txt
           git commit -m "Update IP files"
-          git push
+          git push origin HEAD
