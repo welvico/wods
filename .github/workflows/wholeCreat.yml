@@ -39,8 +39,13 @@ jobs:
       - name: Create IP directory
         run: mkdir -p ip
 
-      - name: List directory contents
-        run: ls -l
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Create 'ip' directory"
+          git push origin HEAD:main
       
       - name: List template files
         run: |
