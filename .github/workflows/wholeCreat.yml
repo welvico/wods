@@ -48,11 +48,11 @@ jobs:
             echo "Processing file: $filename"
             
             # 获取URL内容
-            url_content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/ip/${filename}.ip")
+            url_content=$(curl -sSL "https://raw.githubusercontent.com/welvico/ds/main/speedtest/ip/${filename}.ip")
             
             # 检查内容是否不为空且不是 "404: Not Found"
             if [[ -n "$url_content" && "$url_content" != "404: Not Found" ]]; then
-              content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
+              content=$(curl -sSL "https://raw.githubusercontent.com/welvico/ds/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
               
               # 检查 result 文件的内容是否不为空且不是 "404: Not Found" 或 "Not"
               if [[ -n "$content" && "$content" != "404: Not Found" && "$content" != "Not" ]]; then
