@@ -102,22 +102,22 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     $henanTemplateFile_LT = $templateDir . 'Henan_328.txt';
     if (file_exists($henanTemplateFile_LT)) {
         // Read Henan_328.txt content first
-        $henanLines = file($henanTemplateFile_LT, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        $currentGroup = '';
+        $henanLines_LT = file($henanTemplateFile_LT, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $currentGroup_LT = '';
 
         // Process each line in Henan_328.txt
-        foreach ($henanLines as $line) {
-            if (strpos($line, ',#genre#') !== false) {
-                $currentGroup = $line;
+        foreach ($henanLines_LT as $line_LT) {
+            if (strpos($line_LT, ',#genre#') !== false) {
+                $currentGroup_LT = $line_LT;
                 continue;
             }
 
             // Add line to merged content under current group
-            if (!empty($currentGroup)) {
-                if (!isset($mergedContent[$currentGroup])) {
-                    $mergedContent[$currentGroup] = [];
+            if (!empty($currentGroup_LT)) {
+                if (!isset($mergedContent[$currentGroup_LT])) {
+                    $mergedContent[$currentGroup_LT] = [];
                 }
-                $mergedContent[$currentGroup][] = $line;
+                $mergedContent[$currentGroup_LT][] = $line_LT;
             }
         }
     }
