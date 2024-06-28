@@ -62,7 +62,6 @@ function main() {
 
 main();
 
-
 function mergeFilesByGroup($templateDir, $resultFile) {
     // Open or create the result file
     $resultHandle = fopen($resultFile, 'w');
@@ -74,81 +73,28 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     // Array to store merged content by group
     $mergedContent = [];
 
-    // Check if template/Henan_327.txt exists
-    $henanTemplateFile = $templateDir . 'Henan_327.txt';
-    if (file_exists($henanTemplateFile)) {
-        // Read Henan_327.txt content first
-        $henanLines = file($henanTemplateFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        $currentGroup = '';
-
-        // Process each line in Henan_327.txt
-        foreach ($henanLines as $line) {
-            if (strpos($line, ',#genre#') !== false) {
-                $currentGroup = $line;
-                continue;
-            }
-
-            // Add line to merged content under current group
-            if (!empty($currentGroup)) {
-                if (!isset($mergedContent[$currentGroup])) {
-                    $mergedContent[$currentGroup] = [];
-                }
-                $mergedContent[$currentGroup][] = $line;
-            }
-        }
+    // Process Henan_327.txt if it exists
+    $henan327File = $templateDir . 'Henan_327.txt';
+    if (file_exists($henan327File)) {
+        processFile($henan327File, $mergedContent);
     }
 
-    // Check if template/Henan_328.txt exists
-    $henanTemplateFile_LT = $templateDir . 'Henan_328.txt';
-    if (file_exists($henanTemplateFile_LT)) {
-        // Read Henan_328.txt content first
-        $henanLines = file($henanTemplateFile_LT, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        $currentGroup = '';
-
-        // Process each line in Henan_328.txt
-        foreach ($henanLines as $line) {
-            if (strpos($line, ',#genre#') !== false) {
-                $currentGroup = $line;
-                continue;
-            }
-
-            // Add line to merged content under current group
-            if (!empty($currentGroup)) {
-                if (!isset($mergedContent[$currentGroup])) {
-                    $mergedContent[$currentGroup] = [];
-                }
-                $mergedContent[$currentGroup][] = $line;
-            }
-        }
+    // Process Henan_328.txt if it exists and append to merged content
+    $henan328File = $templateDir . 'Henan_328.txt';
+    if (file_exists($henan328File)) {
+        processFile($henan328File, $mergedContent);
     }
 
     // Get all other template files
     $templateFiles = glob($templateDir . '*.txt');
 
-    // Process each template file (excluding Henan_327.txt , Henan_328.txt )
+    // Process each template file (excluding Henan_327.txt and Henan_328.txt)
     foreach ($templateFiles as $templateFile) {
-        if ($templateFile === $henanTemplateFile || $templateFile === $henanTemplateFile_LT) {
-            continue; // Skip Henan_327.txt or Henan_328.txt since it's already processed
+        if ($templateFile === $henan327File || $templateFile === $henan328File) {
+            continue; // Skip Henan_327.txt and Henan_328.txt since they're already processed
         }
 
-        $lines = file($templateFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        $currentGroup = '';
-
-        // Process each line in the file
-        foreach ($lines as $line) {
-            if (strpos($line, ',#genre#') !== false) {
-                $currentGroup = $line;
-                continue;
-            }
-
-            // Add line to merged content under current group
-            if (!empty($currentGroup)) {
-                if (!isset($mergedContent[$currentGroup])) {
-                    $mergedContent[$currentGroup] = [];
-                }
-                $mergedContent[$currentGroup][] = $line;
-            }
-        }
+        processFile($templateFile, $mergedContent);
     }
 
     // Write merged content to result file
@@ -163,6 +109,25 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     // Close the result file handle
     fclose($resultHandle);
     echo "Merged content written to $resultFile\n";
+}
+
+function processFile($filePath, &$mergedContent) {
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $currentGroup = '';
+
+    foreach ($lines as $line) {
+        if (strpos($line, ',#genre#') !== false) {
+            $currentGroup = $line;
+            continue;
+        }
+
+        if (!empty($currentGroup)) {
+            if (!isset($mergedContent[$currentGroup])) {
+                $mergedContent[$currentGroup] = [];
+            }
+            $mergedContent[$currentGroup][] = $line;
+        }
+    }
 }
 
 // Paths
