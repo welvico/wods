@@ -133,7 +133,7 @@ jobs:
           echo "Listing root directory"
           ls -R
           echo "Listing ip directory"
-          ls -R ip
+          ls -R $GITHUB_WORKSPACE/ip
           echo "Listing template directory"
           ls -R template
           echo "Listing result directory (should be empty initially)"
