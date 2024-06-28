@@ -98,13 +98,37 @@ function mergeFilesByGroup($templateDir, $resultFile) {
         }
     }
 
+    // Check if template/Henan_328.txt exists
+    $henanTemplateFile_LT = $templateDir . 'Henan_328.txt';
+    if (file_exists($henanTemplateFile_LT)) {
+        // Read Henan_328.txt content first
+        $henanLines = file($henanTemplateFile_LT, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $currentGroup = '';
+
+        // Process each line in Henan_328.txt
+        foreach ($henanLines as $line) {
+            if (strpos($line, ',#genre#') !== false) {
+                $currentGroup = $line;
+                continue;
+            }
+
+            // Add line to merged content under current group
+            if (!empty($currentGroup)) {
+                if (!isset($mergedContent[$currentGroup])) {
+                    $mergedContent[$currentGroup] = [];
+                }
+                $mergedContent[$currentGroup][] = $line;
+            }
+        }
+    }
+
     // Get all other template files
     $templateFiles = glob($templateDir . '*.txt');
 
-    // Process each template file (excluding Henan_327.txt)
+    // Process each template file (excluding Henan_327.txt , Henan_328.txt )
     foreach ($templateFiles as $templateFile) {
-        if ($templateFile === $henanTemplateFile) {
-            continue; // Skip Henan_327.txt since it's already processed
+        if ($templateFile === $henanTemplateFile || $templateFile === $henanTemplateFile_LT) {
+            continue; // Skip Henan_327.txt or Henan_328.txt since it's already processed
         }
 
         $lines = file($templateFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
