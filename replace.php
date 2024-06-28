@@ -79,19 +79,19 @@ function mergeFilesByGroup($templateDir, $resultFile) {
         processFile($henan327File, $mergedContent);
     }
 
-    // Process Henan_328.txt if it exists and append to merged content
-    $henan328File = $templateDir . 'Henan_328.txt';
-    if (file_exists($henan328File)) {
-        processFile($henan328File, $mergedContent);
+    // Process Henan_338.txt if it exists and append to merged content
+    $henan338File = $templateDir . 'Henan_338.txt';
+    if (file_exists($henan338File)) {
+        processFile($henan338File, $mergedContent);
     }
 
     // Get all other template files
     $templateFiles = glob($templateDir . '*.txt');
 
-    // Process each template file (excluding Henan_327.txt and Henan_328.txt)
+    // Process each template file (excluding Henan_327.txt and Henan_338.txt)
     foreach ($templateFiles as $templateFile) {
-        if ($templateFile === $henan327File || $templateFile === $henan328File) {
-            continue; // Skip Henan_327.txt and Henan_328.txt since they're already processed
+        if ($templateFile === $henan327File || $templateFile === $henan338File) {
+            continue; // Skip Henan_327.txt and Henan_338.txt since they're already processed
         }
 
         processFile($templateFile, $mergedContent);
