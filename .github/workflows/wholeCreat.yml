@@ -46,14 +46,26 @@ jobs:
           while IFS= read -r file; do
             filename=$(basename "$file" .txt)
             echo "Processing file: $filename"
-            content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
-            if [[ -n "$content" && "$content" != "404: Not Found" && "$content" != "Not" ]]; then
-              echo "$content" > "ip/${filename}.txt"
-              cat "ip/${filename}.txt"  # 输出文件内容以便调试
+            
+            # 获取URL内容
+            url_content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/ip/${filename}.ip")
+            
+            # 检查内容是否不为空且不是 "404: Not Found"
+            if [[ -n "$url_content" && "$url_content" != "404: Not Found" ]]; then
+              content=$(curl -sSL "https://raw.githubusercontent.com/redrainl/iptv/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
+              
+              # 检查 result 文件的内容是否不为空且不是 "404: Not Found" 或 "Not"
+              if [[ -n "$content" && "$content" != "404: Not Found" && "$content" != "Not" ]]; then
+                echo "$content" > "ip/${filename}.txt"
+                cat "ip/${filename}.txt"  # 输出文件内容以便调试
+              else
+                echo "Skipping file: $filename because content is empty or '404: Not Found'"
+              fi
             else
-              echo "Skipping file: $filename because content is empty or '404: Not Found'"
+              echo "Skipping file: $filename because URL content is empty or '404: Not Found'"
             fi
           done < template_files.txt
+
 
       - name: Configure Git
         env:
