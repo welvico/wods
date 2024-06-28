@@ -38,7 +38,10 @@ jobs:
                
       - name: Create IP directory
         run: mkdir -p ip
-            
+
+      - name: List directory contents
+        run: ls -l
+      
       - name: List template files
         run: |
           find template -type f -name "*.txt" -print > template_files.txt
