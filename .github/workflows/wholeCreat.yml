@@ -162,3 +162,7 @@ jobs:
           git push
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
+
+      - name: Access autoURL
+        run: |
+          curl -X GET ${{ secrets.AUTO_URL }}
