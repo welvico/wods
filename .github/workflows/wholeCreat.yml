@@ -163,6 +163,6 @@ jobs:
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
 
-      - name: Access autoURL
+      - name: Access autoUpdate URL
         run: |
-          curl -X GET ${{ secrets.AUTO_URL }}
+          curl -X GET ${{ secrets.AUTOUPDATE_URL }}
