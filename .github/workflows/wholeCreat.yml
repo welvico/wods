@@ -135,9 +135,9 @@ jobs:
           echo "Listing ip directory"
           ls -R $GITHUB_WORKSPACE/ip
           echo "Listing template directory"
-          ls -R template
+          ls -R $GITHUB_WORKSPACE/template
           echo "Listing result directory (should be empty initially)"
-          ls -R result || echo "result directory is empty"
+          ls -R $GITHUB_WORKSPACE/result || echo "result directory is empty"
 
       - name: Execute PHP script to merge files
         run: php replace.php
