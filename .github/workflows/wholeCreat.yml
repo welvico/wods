@@ -123,8 +123,8 @@ jobs:
       - name: Create Result directory
         run: mkdir -p result
 
-      - name: Copy ACM.txt to result
-        run: cp template/ACM.txt result/
+      #- name: Copy ACM.txt to result
+        #run: cp template/ACM.txt result/
   
       - name: Copy ACM_ip.txt to ip and rename it to ACM.txt
         run: cp template/ACM_ip.txt ip/ACM.txt
