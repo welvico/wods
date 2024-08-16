@@ -85,13 +85,19 @@ function mergeFilesByGroup($templateDir, $resultFile) {
         processFile($henan338File, $mergedContent);
     }
 
+    // Process Shanxi_CU_517.txt if it exists and append to merged content
+    $shanxi517File = $templateDir . 'Shanxi_CU_517.txt';
+    if (file_exists($shanxi517File)) {
+        processFile($shanxi517File, $mergedContent);
+    }
+
     // Get all other template files
     $templateFiles = glob($templateDir . '*.txt');
 
-    // Process each template file (excluding Henan_327.txt and Henan_338.txt)
+    // Process each template file (excluding Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt)
     foreach ($templateFiles as $templateFile) {
-        if ($templateFile === $henan327File || $templateFile === $henan338File) {
-            continue; // Skip Henan_327.txt and Henan_338.txt since they're already processed
+        if ($templateFile === $henan327File || $templateFile === $henan338File || $templateFile === $shanxi517File) {
+            continue; // Skip Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt since they're already processed
         }
 
         processFile($templateFile, $mergedContent);
