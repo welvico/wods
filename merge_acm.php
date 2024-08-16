@@ -13,6 +13,7 @@ $mergedContent = [];
 // 处理ACM.txt的内容
 $group = '';
 foreach ($acmLines as $line) {
+    $line = trim($line); // 去除多余空格和换行符
     if (strpos($line, '#genre#') !== false) {
         // 新分组
         $group = $line;
@@ -28,6 +29,7 @@ foreach ($acmLines as $line) {
 // 处理all.txt的内容
 $group = '';
 foreach ($allLines as $line) {
+    $line = trim($line); // 去除多余空格和换行符
     if (strpos($line, '#genre#') !== false) {
         // 新分组
         $group = $line;
