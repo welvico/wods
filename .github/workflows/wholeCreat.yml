@@ -122,10 +122,7 @@ jobs:
 
       - name: Create Result directory
         run: mkdir -p result
-
-      #- name: Copy ACM.txt to result directory
-        #run: cp template/ACM.txt result/   
-
+   
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -151,10 +148,7 @@ jobs:
           ls -R result
           echo "Content of result/all.txt"
           cat result/all.txt
-
-      #- name: Execute PHP script to merge ACM files
-        #run: php merge_acm.php    
-
+   
       - name: Configure git
         run: |
           git config --global user.name 'github-actions[bot]'
