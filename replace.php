@@ -72,13 +72,7 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
     // Array to store merged content by group
     $mergedContent = [];
-    /*
-    // Process ACM.txt if it exists
-    $acmFile = $templateDir . 'ACM.txt';
-    if (file_exists($acmFile)) {
-        processFile($acmFile, $mergedContent);
-    }
-    */
+        
     // Process Henan_327.txt if it exists
     $henan327File = $templateDir . 'Henan_327.txt';
     if (file_exists($henan327File)) {
@@ -102,7 +96,7 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
     // Process each template file (excluding Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt)
     foreach ($templateFiles as $templateFile) {
-        if ($templateFile === $henan327File || $templateFile === $henan338File || $templateFile === $shanxi517File || $templateFile === $acmFile) {
+        if ($templateFile === $henan327File || $templateFile === $henan338File || $templateFile === $shanxi517File) {
             continue; // Skip Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt since they're already processed
         }
 
