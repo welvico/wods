@@ -126,8 +126,19 @@ jobs:
       - name: Copy ACM.txt to result
         run: cp template/ACM.txt result/
 
+      - name: Create ip directory
+        run: |
+          mkdir -p ip
+          echo "Created ip directory if it did not exist"
+
+      - name: List ip directory contents
+        run: ls -l ip/
+
       - name: Copy ACM_ip.txt to ip and rename it to ACM.txt
         run: cp template/ACM_ip.txt ip/ACM.txt
+
+      - name: List ip directory contents after copying
+        run: ls -l ip/
  
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
