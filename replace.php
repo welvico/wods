@@ -142,5 +142,5 @@ $resultFile = 'result/all.txt';
 
 // Call function to merge files by group
 mergeFilesByGroup($templateDir, $resultFile);
-include('merge_acm.php');
+include 'merge_acm.php';
 ?>
