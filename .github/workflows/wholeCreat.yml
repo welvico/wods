@@ -125,20 +125,9 @@ jobs:
 
       - name: Copy ACM.txt to result
         run: cp template/ACM.txt result/
-
-      - name: Create ip directory
-        run: |
-          mkdir -p ip
-          echo "Created ip directory if it did not exist"
-
-      - name: List ip directory contents
-        run: ls -l ip/
-
+  
       - name: Copy ACM_ip.txt to ip and rename it to ACM.txt
         run: cp template/ACM_ip.txt ip/ACM.txt
-
-      - name: List ip directory contents after copying
-        run: ls -l ip/
  
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -171,7 +160,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Commit and push changes
+      - name: Commit and push result changes
         run: |
           git add result/*
           git status
@@ -180,6 +169,16 @@ jobs:
           git push
         env:
           PAT: ${{ secrets.GITHUBS_TOKEN }}
+
+      - name: Commit and push ip changes
+        run: |
+          git add ip/*
+          git status
+          git commit -m "Update ip files" || echo "No changes to commit"
+          git pull origin main --rebase
+          git push
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}    
 
       - name: Access autoUpdate URL
         run: |
