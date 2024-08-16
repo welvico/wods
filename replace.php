@@ -72,13 +72,13 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
     // Array to store merged content by group
     $mergedContent = [];
-
+    /*
     // Process ACM.txt if it exists
     $acmFile = $templateDir . 'ACM.txt';
     if (file_exists($acmFile)) {
         processFile($acmFile, $mergedContent);
     }
-    
+    */
     // Process Henan_327.txt if it exists
     $henan327File = $templateDir . 'Henan_327.txt';
     if (file_exists($henan327File)) {
