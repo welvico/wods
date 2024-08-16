@@ -152,8 +152,8 @@ jobs:
           echo "Content of result/all.txt"
           cat result/all.txt
 
-      - name: Execute PHP script to merge ACM files
-        run: php merge_acm.php    
+      #- name: Execute PHP script to merge ACM files
+        #run: php merge_acm.php    
 
       - name: Configure git
         run: |
