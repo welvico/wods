@@ -72,7 +72,7 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
     // Array to store merged content by group
     $mergedContent = [];
-        
+
     // Process Henan_327.txt if it exists
     $henan327File = $templateDir . 'Henan_327.txt';
     if (file_exists($henan327File)) {
@@ -142,4 +142,5 @@ $resultFile = 'result/all.txt';
 
 // Call function to merge files by group
 mergeFilesByGroup($templateDir, $resultFile);
+
 ?>
