@@ -123,8 +123,8 @@ jobs:
       - name: Create Result directory
         run: mkdir -p result
 
-      - name: Copy ACM.txt to result directory
-        run: cp template/ACM.txt result/   
+      #- name: Copy ACM.txt to result directory
+        #run: cp template/ACM.txt result/   
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -144,6 +144,9 @@ jobs:
 
       - name: Execute PHP script to merge files
         run: php replace.php
+
+      - name: Execute PHP script to merge ACM files
+        run: php merge_acm.php
 
       - name: List result directory contents after execution
         run: |
