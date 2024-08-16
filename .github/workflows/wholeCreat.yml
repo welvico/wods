@@ -123,6 +123,9 @@ jobs:
       - name: Create Result directory
         run: mkdir -p result
 
+      - name: Copy ACM.txt to result directory
+        run: cp template/ACM.txt result/   
+
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
