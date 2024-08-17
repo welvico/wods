@@ -183,3 +183,18 @@ jobs:
       - name: Access autoUpdate URL
         run: |
           curl -X GET ${{ secrets.AUTOUPDATE_URL }}
+        continue-on-error: false  # 如果curl失败，后续步骤将不会执行
+
+      - name: Delete Result Folder
+        run: |
+          if [ -d "result/" ]; then
+            rm -rf result/
+            git rm -r --cached result/
+            git commit -m "Delete Result folder" || echo "No changes to commit"
+            git pull --rebase
+            git push
+          else
+            echo "result/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}  
