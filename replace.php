@@ -72,13 +72,20 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
     // Array to store merged content by group
     $mergedContent = [];
+    //Sort File
+    $sortFile = array('ACM.txt', 'Henan_327.txt', 'Henan_338.txt', 'Shanxi_CU_517.txt');
+    $sortFilepath = [];
+    foreach ($sortFile as $filename) {
+        // Process $filename if it exists
+        $acmFile = $templateDir . $filename;
+        if (file_exists($acmFile)) {
+            processFile($acmFile, $mergedContent);
+            
+            $sortFilepath[] = $acmFile;
+        }
+    } 
 
-    // Process ACM.txt if it exists
-    $acmFile = $templateDir . 'ACM.txt';
-    if (file_exists($acmFile)) {
-        processFile($acmFile, $mergedContent);
-    }
-
+    /*
     // Process Henan_327.txt if it exists
     $henan327File = $templateDir . 'Henan_327.txt';
     if (file_exists($henan327File)) {
@@ -96,10 +103,16 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     if (file_exists($shanxi517File)) {
         processFile($shanxi517File, $mergedContent);
     }
-
+    */
+    
+    // Get all template files
+    $alltemplateFiles = glob($templateDir . '*.txt');
     // Get all other template files
-    $templateFiles = glob($templateDir . '*.txt');
+    $templateFiles = array_diff($alltemplateFiles, $sortFilepath);
 
+    processFile($templateFile, $mergedContent);
+
+    /*
     // Process each template file (excluding Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt)
     foreach ($templateFiles as $templateFile) {
         if ($templateFile === $henan327File || $templateFile === $henan338File || $templateFile === $shanxi517File || $templateFile === $acmFile) {
@@ -108,7 +121,8 @@ function mergeFilesByGroup($templateDir, $resultFile) {
 
         processFile($templateFile, $mergedContent);
     }
-
+    */
+    
     // Write merged content to result file
     foreach ($mergedContent as $group => $content) {
         fwrite($resultHandle, "$group\n");
