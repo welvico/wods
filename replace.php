@@ -109,9 +109,10 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     $alltemplateFiles = glob($templateDir . '*.txt');
     // Get all other template files
     $templateFiles = array_diff($alltemplateFiles, $sortFilepath);
-
-    processFile($templateFile, $mergedContent);
-
+    foreach ($templateFiles as $templateFile) {
+        processFile($templateFile, $mergedContent);
+    }
+    
     /*
     // Process each template file (excluding Henan_327.txt and Henan_338.txt and Shanxi_CU_517.txt)
     foreach ($templateFiles as $templateFile) {
