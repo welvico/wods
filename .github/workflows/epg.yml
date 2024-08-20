@@ -10,12 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Delete epg/xml Folder
+      run: |
+        if [ -d "epg/xml/" ]; then
+          rm -rf epg/xml/
+          git rm -r --cached epg/xml/
+          git commit -m "Delete epg/xml/ folder" || echo "No changes to commit"
+          git push
+        else
+          echo "epg/xml/ directory not found, skipping deletion"
+        fi
+      env:
+        PAT: ${{ secrets.GITHUBS_TOKEN }}
+        
     - name: Update EPG Files
       run: |
-        rm -f e.xml && wget https://epg.112114.xyz/pp.xml -O e.xml
+        mkdir -p epg/xml/
+        #rm -f epg/xml/e.xml && 
+        wget https://epg.112114.xyz/pp.xml -O epg/xml/e.xml
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add e.xml
+        git add epg/xml/e.xml
         git status
         git commit -m "EPG Automatic Update." || echo "No changes to commit"
       env:
@@ -38,7 +53,7 @@ jobs:
     - name: xml to json
       working-directory: epg
       run: |
-        mkdir -p ./xml ./json
+        mkdir -p ./json
         mv -f ../e.xml ./xml/e.xml
         pip3 install xmltodict
         python3 xml2json.py
@@ -66,16 +81,3 @@ jobs:
         git push
       env:
         PAT: ${{ secrets.GITHUBS_TOKEN }} 
-
-    - name: Delete e.xml File
-      run: |
-        if [ -f "e.xml" ]; then
-        rm -f e.xml
-        git commit -m "Delete e.xml File" || echo "No changes to commit"
-        git pull --rebase
-        git push
-        else
-        echo "e.xml File not found, skipping deletion"
-        fi
-      env:
-        PAT: ${{ secrets.GITHUBS_TOKEN }}  
