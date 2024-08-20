@@ -64,7 +64,19 @@ jobs:
         git stash
         git pull origin main --rebase  # 确保拉取更新并解决冲突
         git push
-        # Delete the e.xml file after committing and pushing changes
-        rm -f e.xml
       env:
         PAT: ${{ secrets.GITHUBS_TOKEN }} 
+
+    - name: Delete e.xml File
+      run: |
+        if [ -f "e.xml" ]; then
+        rm -f e.xml
+        git rm -r --cached .
+        git commit -m "Delete e.xml File" || echo "No changes to commit"
+        git pull --rebase
+        git push
+        else
+        echo "e.xml File not found, skipping deletion"
+        fi
+      env:
+        PAT: ${{ secrets.GITHUBS_TOKEN }}  
