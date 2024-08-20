@@ -38397,6 +38397,9 @@
 	<programme channel="黑莓电影" start="20240821014500 +0800" stop="20240821032000 +0800">
 		<title lang="zh">至爱梵高b7星空之谜</title>
 	</programme>
+	<programme channel="黑莓电影" start="20240821032000 +0800" stop="20240821044600 +0800">
+		<title lang="zh">传话的人</title>
+	</programme>
 	<channel id="黑龙江卫视">
 		<display-name lang="zh">黑龙江卫视</display-name>
 	</channel>
@@ -38772,6 +38775,9 @@
 	<programme channel="newtv超级电视剧" start="20240821023700 +0800" stop="20240821032100 +0800">
 		<title lang="zh">21_红蔷薇</title>
 	</programme>
+	<programme channel="newtv超级电视剧" start="20240821032100 +0800" stop="20240821040400 +0800">
+		<title lang="zh">22_红蔷薇</title>
+	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
 	</channel>
@@ -38786,6 +38792,9 @@
 	</programme>
 	<programme channel="newtv精品大剧" start="20240821023500 +0800" stop="20240821032700 +0800">
 		<title lang="zh">02_壮丁也是兵</title>
+	</programme>
+	<programme channel="newtv精品大剧" start="20240821032700 +0800" stop="20240821041200 +0800">
+		<title lang="zh">03_壮丁也是兵</title>
 	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
@@ -38804,6 +38813,9 @@
 	</programme>
 	<programme channel="newtv精品纪录" start="20240821024500 +0800" stop="20240821032200 +0800">
 		<title lang="zh">第3集 邱锡鹏：改变世界，从小苔藓开始，MOSS之父的大模型探索</title>
+	</programme>
+	<programme channel="newtv精品纪录" start="20240821032200 +0800" stop="20240821040100 +0800">
+		<title lang="zh">第4集 鲍捷：穿越人工智能的冬天，迎接大模型时代的“恒纪元”</title>
 	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
@@ -38834,6 +38846,9 @@
 	</programme>
 	<programme channel="newtv军旅剧场" start="20240821022400 +0800" stop="20240821031900 +0800">
 		<title lang="zh">01_秘密列车</title>
+	</programme>
+	<programme channel="newtv军旅剧场" start="20240821031900 +0800" stop="20240821040400 +0800">
+		<title lang="zh">02_秘密列车</title>
 	</programme>
 	<channel id="newtv家庭剧场">
 		<display-name lang="zh">NEWTV家庭剧场</display-name>
@@ -38990,6 +39005,9 @@
 	</programme>
 	<programme channel="newtv精品体育" start="20240821014300 +0800" stop="20240821032100 +0800">
 		<title lang="zh">2024美洲杯小组赛：阿根廷VS加拿大</title>
+	</programme>
+	<programme channel="newtv精品体育" start="20240821032100 +0800" stop="20240821050200 +0800">
+		<title lang="zh">2024美洲杯小组赛：巴西VS哥斯达黎加</title>
 	</programme>
 	<channel id="newtv武搏世界">
 		<display-name lang="zh">NEWTV武搏世界</display-name>
