@@ -1,0 +1,200 @@
+name: Daily IP Collection and Template Processing
+
+on:
+  #schedule:
+    #- cron: '30 21 * * *'  # 每天北京时间早上5点30分执行
+  repository_dispatch:
+    types: [trigger-wods]
+    
+  workflow_dispatch:  # 手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  collect_ips:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set Git Identity
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"  
+
+      - name: Delete IP Folder
+        run: |
+          if [ -d "ip/" ]; then
+            rm -rf ip/
+            git rm -r --cached ip/
+            git commit -m "Delete IP folder" || echo "No changes to commit"
+            git push
+          else
+            echo "ip/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+               
+      - name: Create IP directory
+        run: mkdir -p ip
+
+      - name: List template files
+        run: |
+          find template -type f -name "*.txt" -print > template_files.txt
+          cat template_files.txt
+
+      - name: Extract IPs from template files
+        run: |
+          while IFS= read -r file; do
+            filename=$(basename "$file" .txt)
+            echo "Processing file: $filename"
+            
+            # 获取URL内容
+            url_content=$(curl -sSL "https://raw.githubusercontent.com/welvico/dszb/main/speedtest/ip/${filename}.ip")
+            
+            # 检查内容是否不为空且不是 "404: Not Found"
+            if [[ -n "$url_content" && "$url_content" != "404: Not Found" ]]; then
+              content=$(curl -sSL "https://raw.githubusercontent.com/welvico/dszb/main/speedtest/result/result_${filename}.txt" | awk '{print $2}')
+              
+              # 检查 result 文件的内容是否不为空且不是 "404: Not Found" 或 "Not"
+              if [[ -n "$content" && "$content" != "404: Not Found" && "$content" != "Not" ]]; then
+                echo "$content" > "ip/${filename}.txt"
+                cat "ip/${filename}.txt"  # 输出文件内容以便调试
+              else
+                echo "Skipping file: $filename because content is empty or '404: Not Found'"
+              fi
+            else
+              echo "Skipping file: $filename because URL content is empty or '404: Not Found'"
+            fi
+          done < template_files.txt
+
+
+      - name: Configure Git
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
+      - name: Add files to Git
+        run: |
+          git add ip/*.txt
+          
+      - name: Check Git status
+        run: |
+          git status
+          
+      - name: Commit changes
+        run: |
+          git commit -m "Update IP files" || echo "Nothing to commit"
+          
+      - name: Push changes
+        run: |
+          git push origin HEAD || echo "Push failed"
+
+  update_templates:
+    runs-on: ubuntu-latest
+    needs: collect_ips  # 等待 collect_ips 完成后再执行
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set Git Identity
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Delete Result Folder
+        run: |
+          if [ -d "result/" ]; then
+            rm -rf result/
+            git rm -r --cached result/
+            git commit -m "Delete Result folder" || echo "No changes to commit"
+            git pull --rebase
+            git push
+          else
+            echo "result/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+
+      - name: Create Result directory
+        run: mkdir -p result
+
+      #- name: Copy ACM.txt to result
+        #run: cp template/ACM.txt result/
+  
+      - name: Copy ACM_ip.txt to ip and rename it to ACM.txt
+        run: cp template/ACM_ip.txt ip/ACM.txt
+ 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'  # 根据需求选择 PHP 版本
+
+      - name: List directory contents before execution
+        run: |
+          echo "Listing root directory"
+          ls -R
+          echo "Listing ip directory"
+          ls -R $GITHUB_WORKSPACE/ip
+          echo "Listing template directory"
+          ls -R $GITHUB_WORKSPACE/template
+          echo "Listing result directory (should be empty initially)"
+          ls -R $GITHUB_WORKSPACE/result || echo "result directory is empty"
+
+      - name: Execute PHP script to merge files
+        run: php replace.php
+
+      - name: List result directory contents after execution
+        run: |
+          echo "Listing result directory after script execution"
+          ls -R result
+          echo "Content of result/all.txt"
+          cat result/all.txt
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push result changes
+        run: |
+          git add result/*
+          git status
+          git commit -m "Update result files" || echo "No changes to commit"
+          git pull origin main --rebase
+          git push
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}
+
+      - name: Commit and push ip changes
+        run: |
+          git add ip/*
+          git status
+          git commit -m "Update ip files" || echo "No changes to commit"
+          git pull origin main --rebase
+          git push
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}    
+
+      - name: Access autoUpdate URL
+        run: |
+          curl -X GET ${{ secrets.AUTOUPDATE_URL }}
+        continue-on-error: false  # 如果curl失败，后续步骤将不会执行
+
+      - name: Delete Result Folder
+        run: |
+          if [ -d "result/" ]; then
+            rm -rf result/
+            git rm -r --cached result/
+            git commit -m "Delete Result folder" || echo "No changes to commit"
+            git pull --rebase
+            git push
+          else
+            echo "result/ directory not found, skipping deletion"
+          fi
+        env:
+          PAT: ${{ secrets.GITHUBS_TOKEN }}  
