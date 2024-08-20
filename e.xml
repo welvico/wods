@@ -4551,6 +4551,81 @@
 	<programme channel="中国教育4台" start="20240821235000 +0800" stop="20240821235900 +0800">
 		<title lang="zh">夏天说体育</title>
 	</programme>
+	<channel id="中天新闻台">
+		<display-name lang="zh">中天新闻台</display-name>
+	</channel>
+	<programme channel="中天新闻台" start="20240821000000 +0800" stop="20240821010000 +0800">
+		<title lang="zh">18晚間新聞(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821010000 +0800" stop="20240821020000 +0800">
+		<title lang="zh">19晚間新聞(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821020000 +0800" stop="20240821030000 +0800">
+		<title lang="zh">頭條開講(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821030000 +0800" stop="20240821040000 +0800">
+		<title lang="zh">頭條開講(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821040000 +0800" stop="20240821050000 +0800">
+		<title lang="zh">中天SUPER夜線(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821050000 +0800" stop="20240821060000 +0800">
+		<title lang="zh">全球大視野(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821060000 +0800" stop="20240821070000 +0800">
+		<title lang="zh">06中天晨報(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821070000 +0800" stop="20240821080000 +0800">
+		<title lang="zh">07中天晨報(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821080000 +0800" stop="20240821090000 +0800">
+		<title lang="zh">08中天晨報(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821090000 +0800" stop="20240821100000 +0800">
+		<title lang="zh">09中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821100000 +0800" stop="20240821110000 +0800">
+		<title lang="zh">10中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821110000 +0800" stop="20240821120000 +0800">
+		<title lang="zh">11中天新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821120000 +0800" stop="20240821130000 +0800">
+		<title lang="zh">12午間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821130000 +0800" stop="20240821140000 +0800">
+		<title lang="zh">13午間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821140000 +0800" stop="20240821150000 +0800">
+		<title lang="zh">14大新聞大爆卦(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821150000 +0800" stop="20240821160000 +0800">
+		<title lang="zh">15大新聞大爆卦(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821160000 +0800" stop="20240821170000 +0800">
+		<title lang="zh">16中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821170000 +0800" stop="20240821180000 +0800">
+		<title lang="zh">17中天新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821180000 +0800" stop="20240821190000 +0800">
+		<title lang="zh">18晚間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821190000 +0800" stop="20240821200000 +0800">
+		<title lang="zh">19晚間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821200000 +0800" stop="20240821210000 +0800">
+		<title lang="zh">20頭條開講(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821210000 +0800" stop="20240821220000 +0800">
+		<title lang="zh">21頭條開講(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821220000 +0800" stop="20240821230000 +0800">
+		<title lang="zh">22中天SUPER夜線(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240821230000 +0800" stop="20240821235900 +0800">
+		<title lang="zh">23全球大視野(首)</title>
+	</programme>
 	<channel id="中央台–珠江">
 		<display-name lang="zh">中央台–珠江</display-name>
 	</channel>
@@ -11438,6 +11513,9 @@
 	</channel>
 	<programme channel="咪咕足球" start="20240821000100 +0800" stop="20240821012100 +0800">
 		<title lang="zh">村BA</title>
+	</programme>
+	<programme channel="咪咕足球" start="20240821012100 +0800" stop="20240821012600 +0800">
+		<title lang="zh">频道宣传</title>
 	</programme>
 	<channel id="四川卫视">
 		<display-name lang="zh">四川卫视</display-name>
@@ -30483,6 +30561,9 @@
 	<programme channel="纯享4K" start="20240821004100 +0800" stop="20240821010800 +0800">
 		<title lang="zh">记住乡愁4K第九季 李鹊——大河归处是吾乡</title>
 	</programme>
+	<programme channel="纯享4K" start="20240821010800 +0800" stop="20240821021800 +0800">
+		<title lang="zh">乐享汇4K “心声向往”演唱会</title>
+	</programme>
 	<channel id="经典剧场">
 		<display-name lang="zh">经典剧场</display-name>
 	</channel>
@@ -38148,6 +38229,9 @@
 	<programme channel="黑莓动画" start="20240821001100 +0800" stop="20240821004700 +0800">
 		<title lang="zh">西行纪</title>
 	</programme>
+	<programme channel="黑莓动画" start="20240821004700 +0800" stop="20240821013600 +0800">
+		<title lang="zh">一人之下第二季</title>
+	</programme>
 	<channel id="黑莓电影">
 		<display-name lang="zh">黑莓电影</display-name>
 	</channel>
@@ -38508,17 +38592,26 @@
 	<programme channel="newtv超级电视剧" start="20240821001400 +0800" stop="20240821010300 +0800">
 		<title lang="zh">18_红蔷薇</title>
 	</programme>
+	<programme channel="newtv超级电视剧" start="20240821010300 +0800" stop="20240821014900 +0800">
+		<title lang="zh">19_红蔷薇</title>
+	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
 	</channel>
 	<programme channel="newtv精品大剧" start="20240821001200 +0800" stop="20240821005800 +0800">
 		<title lang="zh">33_冷风暴</title>
 	</programme>
+	<programme channel="newtv精品大剧" start="20240821005800 +0800" stop="20240821014900 +0800">
+		<title lang="zh">34_冷风暴</title>
+	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
 	</channel>
 	<programme channel="newtv精品纪录" start="20240821000700 +0800" stop="20240821010000 +0800">
 		<title lang="zh">第2集：问b7答</title>
+	</programme>
+	<programme channel="newtv精品纪录" start="20240821010000 +0800" stop="20240821013400 +0800">
+		<title lang="zh">01_少年已知愁滋味</title>
 	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
@@ -38540,6 +38633,9 @@
 	</channel>
 	<programme channel="newtv家庭剧场" start="20240821001300 +0800" stop="20240821005800 +0800">
 		<title lang="zh">10_故乡，别来无恙</title>
+	</programme>
+	<programme channel="newtv家庭剧场" start="20240821005800 +0800" stop="20240821014100 +0800">
+		<title lang="zh">11_故乡，别来无恙</title>
 	</programme>
 	<channel id="newtv热播精选">
 		<display-name lang="zh">NEWTV热播精选</display-name>
@@ -38564,6 +38660,12 @@
 	</channel>
 	<programme channel="newtv怡伴健康" start="20240821003000 +0800" stop="20240821004700 +0800">
 		<title lang="zh">小品《休息区的故事》表演者：郭冬临、邵峰、韩云云等</title>
+	</programme>
+	<programme channel="newtv怡伴健康" start="20240821005900 +0800" stop="20240821010700 +0800">
+		<title lang="zh">相声《新未来已来》 表演：金霏 陈曦</title>
+	</programme>
+	<programme channel="newtv怡伴健康" start="20240821011300 +0800" stop="20240821012700 +0800">
+		<title lang="zh">小品《新借髢髢》 表演：范军 秦梦瑶 等</title>
 	</programme>
 	<channel id="newtv潮妈辣婆">
 		<display-name lang="zh">NEWTV潮妈辣婆</display-name>
