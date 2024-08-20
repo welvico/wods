@@ -21,3 +21,11 @@ jobs:
       run: git push -f origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
+
+    - name: xml to json        
+        working-directory: epg
+        run: |
+          mkdir ./xml ./json
+          mv -f ../e.xml ./xml/e.xml
+          pip3 install -r xmltodict
+          python3 xml2json.py
