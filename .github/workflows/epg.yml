@@ -64,5 +64,7 @@ jobs:
         git stash
         git pull origin main --rebase  # 确保拉取更新并解决冲突
         git push
+        # Delete the e.xml file after committing and pushing changes
+        rm -f e.xml
       env:
         PAT: ${{ secrets.GITHUBS_TOKEN }} 
