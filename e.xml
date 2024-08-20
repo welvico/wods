@@ -38625,6 +38625,9 @@
 	<programme channel="newtv精品大剧" start="20240821005800 +0800" stop="20240821014900 +0800">
 		<title lang="zh">34_冷风暴</title>
 	</programme>
+	<programme channel="newtv精品大剧" start="20240821014900 +0800" stop="20240821023500 +0800">
+		<title lang="zh">01_壮丁也是兵</title>
+	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
 	</channel>
@@ -38636,6 +38639,9 @@
 	</programme>
 	<programme channel="newtv精品纪录" start="20240821013400 +0800" stop="20240821015900 +0800">
 		<title lang="zh">02_她们</title>
+	</programme>
+	<programme channel="newtv精品纪录" start="20240821015900 +0800" stop="20240821024500 +0800">
+		<title lang="zh">第2集 戴金权：英特尔院士 20 年，做技术的长期主义者</title>
 	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
@@ -38727,11 +38733,17 @@
 	<programme channel="newtv炫舞未来" start="20240821012900 +0800" stop="20240821014900 +0800">
 		<title lang="zh">风中的额吉-応子（完整）</title>
 	</programme>
+	<programme channel="newtv炫舞未来" start="20240821015200 +0800" stop="20240821021300 +0800">
+		<title lang="zh">为你等待-王梅（完整）</title>
+	</programme>
 	<channel id="newtv精品综合">
 		<display-name lang="zh">NEWTV精品综合</display-name>
 	</channel>
 	<programme channel="newtv精品综合" start="20240821000800 +0800" stop="20240821015100 +0800">
 		<title lang="zh">天b7火</title>
+	</programme>
+	<programme channel="newtv精品综合" start="20240821015100 +0800" stop="20240821031200 +0800">
+		<title lang="zh">跃上高阶职场</title>
 	</programme>
 	<channel id="newtv惊悚悬疑">
 		<display-name lang="zh">NEWTV惊悚悬疑</display-name>
