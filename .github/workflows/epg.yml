@@ -29,3 +29,13 @@ jobs:
         mv -f ../e.xml ./xml/e.xml
         pip3 install xmltodict
         python3 xml2json.py
+
+    - name: Commit and push epg changes
+      run: |
+        git add epg/*
+        git status
+        git commit -m "Update epg files" || echo "No changes to commit"
+        git pull origin main --rebase
+        git push
+      env:
+        PAT: ${{ secrets.GITHUBS_TOKEN }} 
