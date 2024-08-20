@@ -25,7 +25,7 @@ jobs:
     - name: xml to json
       working-directory: epg
       run: |
-        mkdir ./xml ./json
+        mkdir -p ./xml ./json
         mv -f ../e.xml ./xml/e.xml
         pip3 install xmltodict
         python3 xml2json.py
