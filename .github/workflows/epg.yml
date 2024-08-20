@@ -28,4 +28,4 @@ jobs:
         mkdir ./xml ./json
         mv -f ../e.xml ./xml/e.xml
         pip3 install xmltodict
-        python3 epg/xml2json.py
+        python3 xml2json.py
