@@ -1,0 +1,82 @@
+name: EPG Update
+on:
+  #push:
+  #schedule:
+    #- cron: '15 16,18,20,22,0,2,4,6,8,10,12,14 * * *'
+  workflow_dispatch:  # 手动触发  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Update EPG Files
+      run: |
+        rm -f e.xml && wget https://epg.112114.xyz/pp.xml -O e.xml
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add e.xml
+        git status
+        git commit -m "EPG Automatic Update." || echo "No changes to commit"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
+    
+    - name: Push changes
+      run: git push -f origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
+
+    - name: Debug file locations
+      run: |
+        # List files in the root directory
+        ls -l
+        # List files in the epg directory
+        ls -l epg
+        # Check if e.xml is in the root directory
+        ls -l e.xml || echo "e.xml not found in root directory"
+
+    - name: xml to json
+      working-directory: epg
+      run: |
+        mkdir -p ./xml ./json
+        mv -f ../e.xml ./xml/e.xml
+        pip3 install xmltodict
+        python3 xml2json.py
+
+    - name: Check files and hash
+      run: |
+        # Check if e.xml is in the xml directory
+        ls -l ./xml/e.xml || echo "e.xml not found in ./xml/"
+        sha256sum ./xml/e.xml || echo "Failed to calculate hash"
+
+    - name: Check files and git status
+      run: |
+        ls -l
+        ls -l epg/xml
+        ls -l epg/json
+        git status
+
+    - name: Commit and push epg changes
+      run: |
+        git add epg/*
+        git status
+        git commit -m "Update epg files" || echo "No changes to commit"
+        git stash
+        git pull origin main --rebase  # 确保拉取更新并解决冲突
+        git push
+      env:
+        PAT: ${{ secrets.GITHUBS_TOKEN }} 
+
+    - name: Delete e.xml File
+      run: |
+        if [ -f "e.xml" ]; then
+        rm -f e.xml
+        git rm -r --cached .
+        git commit -m "Delete e.xml File" || echo "No changes to commit"
+        git pull --rebase
+        git push
+        else
+        echo "e.xml File not found, skipping deletion"
+        fi
+      env:
+        PAT: ${{ secrets.GITHUBS_TOKEN }}  
