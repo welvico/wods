@@ -34,10 +34,14 @@ jobs:
         pip3 install xmltodict
         python3 xml2json.py
 
-    - name: Check file existence and hash
+    - name: Check files and hash
       run: |
-        ls -l e.xml
-        sha256sum e.xml
+        # Check if e.xml is in the working directory
+        ls -l ./xml/e.xml || echo "e.xml not found in ./xml/"
+        # Check if the xml directory contains e.xml
+        ls -l ./xml
+        # Output hash of the e.xml file in xml directory
+        sha256sum ./xml/e.xml || echo "Failed to calculate hash"
 
     - name: Check files and git status
       run: |
