@@ -26,6 +26,15 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
 
+    - name: Debug file locations
+      run: |
+        # List files in the root directory
+        ls -l
+        # List files in the epg directory
+        ls -l epg
+        # Check if e.xml is in the root directory
+        ls -l e.xml || echo "e.xml not found in root directory"
+
     - name: xml to json
       working-directory: epg
       run: |
@@ -36,11 +45,8 @@ jobs:
 
     - name: Check files and hash
       run: |
-        # Check if e.xml is in the working directory
+        # Check if e.xml is in the xml directory
         ls -l ./xml/e.xml || echo "e.xml not found in ./xml/"
-        # Check if the xml directory contains e.xml
-        ls -l ./xml
-        # Output hash of the e.xml file in xml directory
         sha256sum ./xml/e.xml || echo "Failed to calculate hash"
 
     - name: Check files and git status
