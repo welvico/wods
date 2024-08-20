@@ -41,6 +41,15 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
 
+    - name: Debug file locations
+      run: |
+        # List files in the root directory
+        ls -l
+        # List files in the epg directory
+        ls -l epg
+        # Check if e.xml is in the root directory
+        ls -l e.xml || echo "e.xml not found in root directory"
+    
     - name: xml to json
       working-directory: epg
       run: |
