@@ -30,6 +30,13 @@ jobs:
         pip3 install xmltodict
         python3 xml2json.py
 
+    - name: Check files and git status
+      run: |
+        ls -l
+        ls -l epg/xml
+        ls -l epg/json
+        git status
+
     - name: Commit and push epg changes
       run: |
         git add epg/*
