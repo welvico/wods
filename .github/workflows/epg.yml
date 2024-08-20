@@ -71,7 +71,6 @@ jobs:
       run: |
         if [ -f "e.xml" ]; then
         rm -f e.xml
-        git rm -r --cached .
         git commit -m "Delete e.xml File" || echo "No changes to commit"
         git pull --rebase
         git push
