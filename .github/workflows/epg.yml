@@ -61,6 +61,7 @@ jobs:
         git add epg/*
         git status
         git commit -m "Update epg files" || echo "No changes to commit"
+        git stash
         git pull origin main --rebase  # 确保拉取更新并解决冲突
         git push
       env:
