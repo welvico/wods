@@ -20,19 +20,24 @@ function replaceIpInTemplate($ipFile, $templateFile, $resultFile) {
     // Read template content from $templateFile
     $templateContent = file_get_contents($templateFile);
 
+    $templateContents = '';
     // Replace 'ipipip' with each IP address from $ipFile
-    foreach ($ipLines as $ip) {
-        $templateContent = str_replace('ipipip', $ip, $templateContent);
-        echo "Replaced ipipip with $ip\n";
+    foreach ($ipLines as $k => $ip) {
+        if($k<2){  //only get the first two lines of IP 
+            $templateContents .= str_replace('ipipip', $ip, $templateContent);
+            echo "Replaced ipipip with $ip\n"; 
+        }else{
+            break;
+        }                
     }
 
     // Write replaced content to $resultFile
-    file_put_contents($resultFile, $templateContent);
+    file_put_contents($resultFile, $templateContents);
     echo "Replacement completed for $resultFile\n";
 
     // Print the final content of the result file
     echo "Content of $resultFile:\n";
-    echo $templateContent;
+    echo $templateContents;
 }
 
 function main() {
