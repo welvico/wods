@@ -183,6 +183,7 @@ jobs:
       - name: Access autoUpdate URL
         run: |
           #curl -X GET ${{ secrets.AUTOUPDATE_URL }}
+          curl -X GET "${{ secrets.AUTOUPDATE_URL_DS }}?gh=${{ github.actor }}"
           curl -X GET "${{ secrets.AUTOUPDATE_URL }}?gh=${{ github.actor }}"
         continue-on-error: false  # 如果curl失败，后续步骤将不会执行
 
