@@ -78,7 +78,7 @@ function mergeFilesByGroup($templateDir, $resultFile) {
     // Array to store merged content by group
     $mergedContent = [];
     //Sort File
-    $sortFile = array('Beijing_liantong_145.txt', 'ACM.txt', 'Henan_327.txt', 'Henan_338.txt');
+    $sortFile = array('ACM.txt', 'Henan_327.txt', 'Henan_338.txt'); //'Beijing_liantong_145.txt', 
     $sortFilepath = [];
     foreach ($sortFile as $filename) {
         // Process $filename if it exists
