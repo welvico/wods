@@ -5,6 +5,12 @@ on:
     - cron: '0 16,18,20,22,0,2,4,6,8,10,12,14 * * *'
   workflow_dispatch:  # 手动触发  
 
+  # 监听 dxty_epg.yml 完成
+  workflow_run:
+    workflows: ["DXTY EPG Update"]
+    types:
+      - completed
+  
 jobs:
   build:
     runs-on: ubuntu-latest
