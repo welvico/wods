@@ -9,26 +9,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Delete epg/xml Folder
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'  # 你可以根据需要修改 PHP 版本
+    
+    - name: Delete epg/dxty Folder
       run: |
-        if [ -d "epg/xml/" ]; then
-          rm -rf epg/xml/
-          git rm -r --cached epg/xml/
-          git commit -m "Delete epg/xml/ folder" || echo "No changes to commit"
+        if [ -d "epg/dxty/" ]; then
+          rm -rf epg/dxty/
+          git rm -r --cached epg/dxty/
+          git commit -m "Delete epg/dxty/ folder" || echo "No changes to commit"
           git push
         else
-          echo "epg/xml/ directory not found, skipping deletion"
+          echo "epg/dxty/ directory not found, skipping deletion"
         fi
       env:
         PAT: ${{ secrets.GITHUBS_TOKEN }}
         
     - name: Update EPG Files
       run: |
-        mkdir -p epg/xml/
-        #rm -f epg/xml/e.xml && 
-        wget https://epg.112114.xyz/pp.xml -O epg/xml/e.xml
+        mkdir -p epg/dxty/
+        php epg/dxty.php
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add epg/dxty/d.xml
         git add epg/xml/e.xml
         git status
         git commit -m "EPG Automatic Update." || echo "No changes to commit"
@@ -39,19 +45,12 @@ jobs:
       run: git push -f origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUBS_TOKEN  }}
-  
-    - name: xml to json
-      working-directory: epg
-      run: |
-        mkdir -p ./json
-        pip3 install xmltodict
-        python3 xml2json.py
-   
+
     - name: Check files and git status
       run: |
         ls -l
+        ls -l epg/dxty
         ls -l epg/xml
-        ls -l epg/json
         git status
 
     - name: Commit and push epg changes
