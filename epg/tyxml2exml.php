@@ -27,7 +27,5 @@ file_put_contents('epg/xml/e.xml', $aContent);
 
 echo "e.xml 和 d.xml 的内容已成功合并！\n";
     
-} else {
-    echo '未找到 info 数组或 info 不是数组';
-}
+
 ?>
