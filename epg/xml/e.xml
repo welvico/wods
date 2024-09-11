@@ -15798,6 +15798,81 @@
 	<programme channel="中国教育一套" start="20240912233000 +0800" stop="20240912235900 +0800">
 		<title lang="zh">等着我(23)</title>
 	</programme>
+	<channel id="中天新闻台">
+		<display-name lang="zh">中天新闻台</display-name>
+	</channel>
+	<programme channel="中天新闻台" start="20240912000000 +0800" stop="20240912010000 +0800">
+		<title lang="zh">18晚間新聞(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912010000 +0800" stop="20240912020000 +0800">
+		<title lang="zh">19晚間新聞(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912020000 +0800" stop="20240912030000 +0800">
+		<title lang="zh">頭條開講(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912030000 +0800" stop="20240912040000 +0800">
+		<title lang="zh">頭條開講(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912040000 +0800" stop="20240912050000 +0800">
+		<title lang="zh">中天SUPER夜線(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912050000 +0800" stop="20240912060000 +0800">
+		<title lang="zh">全球大視野(重)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912060000 +0800" stop="20240912070000 +0800">
+		<title lang="zh">06中天晨報(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912070000 +0800" stop="20240912080000 +0800">
+		<title lang="zh">07中天晨報(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912080000 +0800" stop="20240912090000 +0800">
+		<title lang="zh">08中天晨報(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912090000 +0800" stop="20240912100000 +0800">
+		<title lang="zh">09中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912100000 +0800" stop="20240912110000 +0800">
+		<title lang="zh">10中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912110000 +0800" stop="20240912120000 +0800">
+		<title lang="zh">11中天新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912120000 +0800" stop="20240912130000 +0800">
+		<title lang="zh">12午間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912130000 +0800" stop="20240912140000 +0800">
+		<title lang="zh">13午間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912140000 +0800" stop="20240912150000 +0800">
+		<title lang="zh">14大新聞大爆卦(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912150000 +0800" stop="20240912160000 +0800">
+		<title lang="zh">15大新聞大爆卦(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912160000 +0800" stop="20240912170000 +0800">
+		<title lang="zh">16中天新聞(Live) </title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912170000 +0800" stop="20240912180000 +0800">
+		<title lang="zh">17中天新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912180000 +0800" stop="20240912190000 +0800">
+		<title lang="zh">18晚間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912190000 +0800" stop="20240912200000 +0800">
+		<title lang="zh">19晚間新聞(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912200000 +0800" stop="20240912210000 +0800">
+		<title lang="zh">20頭條開講(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912210000 +0800" stop="20240912220000 +0800">
+		<title lang="zh">21頭條開講(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912220000 +0800" stop="20240912230000 +0800">
+		<title lang="zh">22中天SUPER夜線(Live)</title>
+	</programme>
+	<programme channel="中天新闻台" start="20240912230000 +0800" stop="20240912235900 +0800">
+		<title lang="zh">23全球大視野(首)</title>
+	</programme>
 	<channel id="中央台–珠江">
 		<display-name lang="zh">中央台–珠江</display-name>
 	</channel>
@@ -24587,6 +24662,9 @@
 	</channel>
 	<programme channel="咪咕足球" start="20240912000100 +0800" stop="20240912012100 +0800">
 		<title lang="zh">村BA</title>
+	</programme>
+	<programme channel="咪咕足球" start="20240912012100 +0800" stop="20240912012600 +0800">
+		<title lang="zh">频道宣传</title>
 	</programme>
 	<channel id="嘉佳卡通">
 		<display-name lang="zh">嘉佳卡通</display-name>
@@ -47823,6 +47901,9 @@
 	<programme channel="纯享4K" start="20240912003900 +0800" stop="20240912010700 +0800">
 		<title lang="zh">记住乡愁4K第九季 寿光——蔬菜之乡 绿潮竞涌</title>
 	</programme>
+	<programme channel="纯享4K" start="20240912010700 +0800" stop="20240912020700 +0800">
+		<title lang="zh">乐享汇4K “雕刻记忆”演唱会（四）</title>
+	</programme>
 	<channel id="经典剧场">
 		<display-name lang="zh">经典剧场</display-name>
 	</channel>
@@ -58332,6 +58413,9 @@
 	<programme channel="newtv超级综艺" start="20240912002200 +0800" stop="20240912010600 +0800">
 		<title lang="zh">31_乐游原</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20240912010600 +0800" stop="20240912015900 +0800">
+		<title lang="zh">32_乐游原</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -58362,6 +58446,9 @@
 	<programme channel="newtv精品大剧" start="20240912001600 +0800" stop="20240912011100 +0800">
 		<title lang="zh">08_青山不墨</title>
 	</programme>
+	<programme channel="newtv精品大剧" start="20240912011100 +0800" stop="20240912020600 +0800">
+		<title lang="zh">09_青山不墨</title>
+	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
 	</channel>
@@ -58370,6 +58457,9 @@
 	</programme>
 	<programme channel="newtv精品纪录" start="20240912003300 +0800" stop="20240912010600 +0800">
 		<title lang="zh">28_生命的守护者 谢荣</title>
+	</programme>
+	<programme channel="newtv精品纪录" start="20240912010600 +0800" stop="20240912021400 +0800">
+		<title lang="zh">第5集：呼b7吸</title>
 	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
@@ -58433,6 +58523,9 @@
 	</programme>
 	<programme channel="newtv军事评论" start="20240912005000 +0800" stop="20240912011200 +0800">
 		<title lang="zh">美空军高调展示AI战机意欲何为</title>
+	</programme>
+	<programme channel="newtv军事评论" start="20240912011200 +0800" stop="20240912013400 +0800">
+		<title lang="zh">三艘055大驱南海砺剑</title>
 	</programme>
 	<channel id="newtv炫舞未来">
 		<display-name lang="zh">NEWTV炫舞未来</display-name>
