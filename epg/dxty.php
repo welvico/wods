@@ -1,4 +1,6 @@
 <?php
+$dxtyEpgUrl = getenv('DXTY_EPG_URL');
+$dxtyCookie = getenv('DXTY_COOKIE');
 
 $n = array(
 "24h轮播"=>"C8000000000000000001658200465881",
@@ -24,7 +26,7 @@ foreach ($n as $id) {
 }
 
 // 定义 URL
-$url = ${{ secrets.DXTY_EPG_URL }}.$ids;
+$url = $dxtyEpgUrl . $ids;
 
 // 初始化 cURL
 $ch = curl_init($url);
@@ -42,7 +44,7 @@ $headers = [
 				'Accept-Language: zh-CN,zh;q=0.9',
 				'Cache-Control: no-cache',
 				'Connection: keep-alive',
-				${{ secrets.DXTY_COOKIE }},
+				$dxtyCookie,
 				'DNT: 1',
 				'Pragma: no-cache',
 				'sec-ch-ua: "Chromium";v="109", "Not_A Brand";v="99"',
