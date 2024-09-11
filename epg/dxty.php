@@ -116,3 +116,7 @@ if (isset($data['info']) && is_array($data['info'])) {
     //echo $content ;
     // 使用 file_put_contents() 将 $content 写入到 d.xml 文件
     file_put_contents('epg/dxty/d.xml', $content);
+
+} else {
+    echo '未找到 info 数组或 info 不是数组';
+}
