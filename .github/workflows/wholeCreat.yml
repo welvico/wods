@@ -183,6 +183,7 @@ jobs:
       - name: Access autoUpdate URL
         run: |
           #curl -X GET ${{ secrets.AUTOUPDATE_URL }}
+          curl -X GET "${{ secrets.AUTOUPDATE_URL_ZPCT }}?gh=${{ github.actor }}"
           curl -X GET "${{ secrets.AUTOUPDATE_URL_DSI }}?gh=${{ github.actor }}"
           #curl -X GET "${{ secrets.AUTOUPDATE_URL_DS }}?gh=${{ github.actor }}"
           #curl -X GET "${{ secrets.AUTOUPDATE_URL }}?gh=${{ github.actor }}"
