@@ -185,8 +185,8 @@ jobs:
           #curl -X GET ${{ secrets.AUTOUPDATE_URL }}
           curl -X GET "${{ secrets.AUTOUPDATE_URL_ZPCT }}?gh=${{ github.actor }}"
           curl -X GET "${{ secrets.AUTOUPDATE_URL_DSI }}?gh=${{ github.actor }}"
-          #curl -X GET "${{ secrets.AUTOUPDATE_URL_DS }}?gh=${{ github.actor }}"
-          #curl -X GET "${{ secrets.AUTOUPDATE_URL }}?gh=${{ github.actor }}"
+          curl -X GET "${{ secrets.AUTOUPDATE_URL_DS }}?gh=${{ github.actor }}"
+          curl -X GET "${{ secrets.AUTOUPDATE_URL }}?gh=${{ github.actor }}"
         continue-on-error: false  # 如果curl失败，后续步骤将不会执行
 
       - name: Delete Result Folder
