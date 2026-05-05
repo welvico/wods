@@ -22068,6 +22068,9 @@
 	<programme channel="newtv超级电视剧" start="20260506001200 +0800" stop="20260506005800 +0800">
 		<title lang="zh">12_月是故乡明</title>
 	</programme>
+	<programme channel="newtv超级电视剧" start="20260506005800 +0800" stop="20260506014300 +0800">
+		<title lang="zh">13_月是故乡明</title>
+	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
 	</channel>
@@ -22079,6 +22082,9 @@
 	</channel>
 	<programme channel="newtv精品纪录" start="20260506001400 +0800" stop="20260506005900 +0800">
 		<title lang="zh">21_大决战</title>
+	</programme>
+	<programme channel="newtv精品纪录" start="20260506005900 +0800" stop="20260506014400 +0800">
+		<title lang="zh">22_大决战</title>
 	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
@@ -22097,6 +22103,9 @@
 	</channel>
 	<programme channel="newtv家庭剧场" start="20260506000200 +0800" stop="20260506005000 +0800">
 		<title lang="zh">32_故乡，别来无恙</title>
+	</programme>
+	<programme channel="newtv家庭剧场" start="20260506005000 +0800" stop="20260506013900 +0800">
+		<title lang="zh">33_故乡，别来无恙</title>
 	</programme>
 	<channel id="newtv热播精选">
 		<display-name lang="zh">NEWTV热播精选</display-name>
@@ -22524,5 +22533,4 @@
 	<programme channel="求索纪录" start="20260506220000 +0800" stop="20260506235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
