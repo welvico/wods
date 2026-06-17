@@ -16722,6 +16722,9 @@
 	<programme channel="咪咕足球" start="20260618000500 +0800" stop="20260618013500 +0800">
 		<title lang="zh">2026FIBA女篮世界杯资格赛 美国-意大利</title>
 	</programme>
+	<programme channel="咪咕足球" start="20260618013500 +0800" stop="20260618015000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
 	</channel>
@@ -50268,41 +50271,11 @@
 	<channel id="newtv超级综艺">
 		<display-name lang="zh">NEWTV超级综艺</display-name>
 	</channel>
-	<programme channel="newtv超级综艺" start="20260618000000 +0800" stop="20260618020000 +0800">
-		<title lang="zh">精彩节目</title>
+	<programme channel="newtv超级综艺" start="20260618004400 +0800" stop="20260618013000 +0800">
+		<title lang="zh">33_逆流而上的你</title>
 	</programme>
-	<programme channel="newtv超级综艺" start="20260618020000 +0800" stop="20260618040000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618060000 +0800" stop="20260618080000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618080000 +0800" stop="20260618100600 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618100600 +0800" stop="20260618120000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618120000 +0800" stop="20260618140000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618140000 +0800" stop="20260618160000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618160000 +0800" stop="20260618180000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618180000 +0800" stop="20260618190000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618190000 +0800" stop="20260618200000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618200000 +0800" stop="20260618220000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260618220000 +0800" stop="20260618235900 +0800">
-		<title lang="zh">精彩节目</title>
+	<programme channel="newtv超级综艺" start="20260618013000 +0800" stop="20260618021600 +0800">
+		<title lang="zh">34_逆流而上的你</title>
 	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
@@ -50349,11 +50322,20 @@
 	<programme channel="newtv超级电影" start="20260618000600 +0800" stop="20260618013500 +0800">
 		<title lang="zh">斗战苍穹</title>
 	</programme>
+	<programme channel="newtv超级电影" start="20260618013500 +0800" stop="20260618025200 +0800">
+		<title lang="zh">神都蜜探</title>
+	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
 	</channel>
 	<programme channel="newtv超级电视剧" start="20260618001100 +0800" stop="20260618005700 +0800">
 		<title lang="zh">兰桐花开11</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260618005700 +0800" stop="20260618014200 +0800">
+		<title lang="zh">兰桐花开12</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260618014200 +0800" stop="20260618022700 +0800">
+		<title lang="zh">兰桐花开13</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50907,6 +50889,12 @@
 	<programme channel="newtv金牌综艺" start="20260618002900 +0800" stop="20260618011500 +0800">
 		<title lang="zh">26_红蔷薇（DVD版）</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260618011500 +0800" stop="20260618014500 +0800">
+		<title lang="zh">鲜农宗土蜂蜜好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260618014500 +0800" stop="20260618023000 +0800">
+		<title lang="zh">27_红蔷薇（DVD版）</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -51249,5 +51237,4 @@
 	<programme channel="求索纪录" start="20260618220000 +0800" stop="20260618235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
