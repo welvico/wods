@@ -16749,6 +16749,9 @@
 	<programme channel="咪咕综合体育" start="20260625011500 +0800" stop="20260625012000 +0800">
 		<title lang="zh">世界杯宣传</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260625012000 +0800" stop="20260625015500 +0800">
+		<title lang="zh">世界杯精华</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -50868,6 +50871,9 @@
 	<programme channel="newtv超级体育" start="20260625010000 +0800" stop="20260625013000 +0800">
 		<title lang="zh">燃动金杯-2026年世界杯小组赛第一轮进球集锦</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260625013000 +0800" stop="20260625053000 +0800">
+		<title lang="zh">2026世界杯-小组赛B组第三轮(瑞士-加拿大)</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -51783,5 +51789,4 @@
 	<programme channel="求索纪录" start="20260625220000 +0800" stop="20260625235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
