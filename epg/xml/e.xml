@@ -50898,6 +50898,9 @@
 	<programme channel="newtv超级综艺" start="20260709002100 +0800" stop="20260709010800 +0800">
 		<title lang="zh">09_滤镜</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260709010800 +0800" stop="20260709015700 +0800">
+		<title lang="zh">10_滤镜</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -51471,6 +51474,9 @@
 	<programme channel="newtv金牌综艺" start="20260709003200 +0800" stop="20260709011800 +0800">
 		<title lang="zh">01_孤战</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260709011800 +0800" stop="20260709014900 +0800">
+		<title lang="zh">保罗麦克牛皮凉席</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -51816,5 +51822,4 @@
 	<programme channel="求索纪录" start="20260709220000 +0800" stop="20260709235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
