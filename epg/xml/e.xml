@@ -50286,44 +50286,14 @@
 	<programme channel="newtv超级综艺" start="20260710004700 +0800" stop="20260710013200 +0800">
 		<title lang="zh">15_滤镜</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260710013200 +0800" stop="20260710021400 +0800">
+		<title lang="zh">16_滤镜</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
-	<programme channel="newtv超级体育" start="20260710000000 +0800" stop="20260710020000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710020000 +0800" stop="20260710040000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710060000 +0800" stop="20260710080000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710080000 +0800" stop="20260710100600 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710100600 +0800" stop="20260710120000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710120000 +0800" stop="20260710140000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710140000 +0800" stop="20260710160000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710160000 +0800" stop="20260710180000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710180000 +0800" stop="20260710190000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710190000 +0800" stop="20260710200000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710200000 +0800" stop="20260710220000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级体育" start="20260710220000 +0800" stop="20260710235900 +0800">
-		<title lang="zh">精彩节目</title>
+	<programme channel="newtv超级体育" start="20260710013000 +0800" stop="20260710020000 +0800">
+		<title lang="zh">实况录像-2026世界杯 1/8决赛 巴拉圭队-法国队</title>
 	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
@@ -50342,6 +50312,9 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260710005200 +0800" stop="20260710013400 +0800">
 		<title lang="zh">30_蝶影</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260710013400 +0800" stop="20260710021900 +0800">
+		<title lang="zh">31_蝶影</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -51246,5 +51219,4 @@
 	<programme channel="求索纪录" start="20260710220000 +0800" stop="20260710235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
