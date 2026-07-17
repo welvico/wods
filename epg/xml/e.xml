@@ -50163,41 +50163,8 @@
 	<channel id="newtv超级综艺">
 		<display-name lang="zh">NEWTV超级综艺</display-name>
 	</channel>
-	<programme channel="newtv超级综艺" start="20260718000000 +0800" stop="20260718020000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718020000 +0800" stop="20260718040000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718060000 +0800" stop="20260718080000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718080000 +0800" stop="20260718100600 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718100600 +0800" stop="20260718120000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718120000 +0800" stop="20260718140000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718140000 +0800" stop="20260718160000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718160000 +0800" stop="20260718180000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718180000 +0800" stop="20260718190000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718190000 +0800" stop="20260718200000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718200000 +0800" stop="20260718220000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级综艺" start="20260718220000 +0800" stop="20260718235900 +0800">
-		<title lang="zh">精彩节目</title>
+	<programme channel="newtv超级综艺" start="20260718003500 +0800" stop="20260718012100 +0800">
+		<title lang="zh">26_安家</title>
 	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
@@ -50216,6 +50183,9 @@
 	</channel>
 	<programme channel="newtv超级电视剧" start="20260718000700 +0800" stop="20260718005300 +0800">
 		<title lang="zh">29_淬火年代</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260718005300 +0800" stop="20260718013800 +0800">
+		<title lang="zh">30_淬火年代</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50769,6 +50739,9 @@
 	<programme channel="newtv金牌综艺" start="20260718000200 +0800" stop="20260718004800 +0800">
 		<title lang="zh">46_孤战</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260718004800 +0800" stop="20260718013300 +0800">
+		<title lang="zh">47_孤战</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -51111,5 +51084,4 @@
 	<programme channel="求索纪录" start="20260718220000 +0800" stop="20260718235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
