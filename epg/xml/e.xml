@@ -18279,6 +18279,9 @@
 	<programme channel="咪咕足球" start="20260729193000 +0800" stop="20260729203000 +0800">
 		<title lang="zh">超级三对三-2026超三联赛</title>
 	</programme>
+	<programme channel="咪咕足球" start="20260729203500 +0800" stop="20260729220500 +0800">
+		<title lang="zh">NBL城燃之战-25/26赛季 总决赛G3 香港金牛-上海玄鸟</title>
+	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
 	</channel>
@@ -59841,6 +59844,9 @@
 	<programme channel="newtv超级综艺" start="20260729191800 +0800" stop="20260729203500 +0800">
 		<title lang="zh">越战越勇</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260729203500 +0800" stop="20260729215200 +0800">
+		<title lang="zh">开门大吉</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -59901,6 +59907,9 @@
 	<programme channel="newtv超级体育" start="20260729193000 +0800" stop="20260729213000 +0800">
 		<title lang="zh">2026年世界男排联赛总决赛-1/4决赛2</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260729213000 +0800" stop="20260729223500 +0800">
+		<title lang="zh">体育世界</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -59942,6 +59951,9 @@
 	</programme>
 	<programme channel="newtv超级电影" start="20260729183600 +0800" stop="20260729200300 +0800">
 		<title lang="zh">黄金蜘蛛城</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20260729200300 +0800" stop="20260729215100 +0800">
+		<title lang="zh">绝密特勤队</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -60023,6 +60035,15 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260729185800 +0800" stop="20260729194000 +0800">
 		<title lang="zh">33_暗夜与黎明</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260729194000 +0800" stop="20260729202100 +0800">
+		<title lang="zh">34_暗夜与黎明</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260729202100 +0800" stop="20260729210300 +0800">
+		<title lang="zh">35_暗夜与黎明</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260729210300 +0800" stop="20260729214500 +0800">
+		<title lang="zh">36_暗夜与黎明</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -60663,6 +60684,15 @@
 	<programme channel="newtv金牌综艺" start="20260729191000 +0800" stop="20260729194500 +0800">
 		<title lang="zh">RINEWANN经典蚝式钻石机械腕表-渠道（右）</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260729194500 +0800" stop="20260729203000 +0800">
+		<title lang="zh">28_谍战深海之惊蛰[DVD版]</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260729203000 +0800" stop="20260729210000 +0800">
+		<title lang="zh">杏花村好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260729210000 +0800" stop="20260729214400 +0800">
+		<title lang="zh">29_谍战深海之惊蛰[DVD版]</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -61005,5 +61035,4 @@
 	<programme channel="求索纪录" start="20260729220000 +0800" stop="20260729235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
