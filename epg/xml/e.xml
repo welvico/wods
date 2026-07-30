@@ -50580,6 +50580,9 @@
 	<programme channel="newtv超级体育" start="20260731000500 +0800" stop="20260731010600 +0800">
 		<title lang="zh">实况录像-2026年世界泳联跳水世界杯总决赛 1</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260731010600 +0800" stop="20260731023600 +0800">
+		<title lang="zh">实况录像-2026世界杯 1/4决赛 法国队-摩洛哥队</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -51495,5 +51498,4 @@
 	<programme channel="求索纪录" start="20260731220000 +0800" stop="20260731235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
