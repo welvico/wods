@@ -50178,11 +50178,17 @@
 	<programme channel="newtv超级综艺" start="20260805002300 +0800" stop="20260805011000 +0800">
 		<title lang="zh">20_蓝盔特战队</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260805011000 +0800" stop="20260805015500 +0800">
+		<title lang="zh">21_蓝盔特战队</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
 	<programme channel="newtv超级体育" start="20260805000500 +0800" stop="20260805010600 +0800">
 		<title lang="zh">顶级赛事-围棋</title>
+	</programme>
+	<programme channel="newtv超级体育" start="20260805010600 +0800" stop="20260805023600 +0800">
+		<title lang="zh">实况录像-2026世界杯 1/16决赛 巴西队-日本队</title>
 	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
@@ -51102,5 +51108,4 @@
 	<programme channel="求索纪录" start="20260805220000 +0800" stop="20260805235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
