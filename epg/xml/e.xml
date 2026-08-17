@@ -16047,6 +16047,18 @@
 	<programme channel="呼和浩特都市" start="20260818224500 +0800" stop="20260818235900 +0800">
 		<title lang="zh">青城眼</title>
 	</programme>
+	<channel id="咪咕综合体育">
+		<display-name lang="zh">咪咕综合体育</display-name>
+	</channel>
+	<programme channel="咪咕综合体育" start="20260818000000 +0800" stop="20260818002500 +0800">
+		<title lang="zh">网球世界-2026WTA1000多伦多女单站 第1轮 王欣瑜-卡萨金娜</title>
+	</programme>
+	<channel id="咪咕足球">
+		<display-name lang="zh">咪咕足球</display-name>
+	</channel>
+	<programme channel="咪咕足球" start="20260818000500 +0800" stop="20260818013500 +0800">
+		<title lang="zh">2027男篮世界杯预选赛 第一阶段小组赛 中国-日本</title>
+	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
 	</channel>
@@ -49773,41 +49785,8 @@
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
 	</channel>
-	<programme channel="newtv超级电视剧" start="20260818000000 +0800" stop="20260818020000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818020000 +0800" stop="20260818040000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818060000 +0800" stop="20260818080000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818080000 +0800" stop="20260818100600 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818100600 +0800" stop="20260818120000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818120000 +0800" stop="20260818140000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818140000 +0800" stop="20260818160000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818160000 +0800" stop="20260818180000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818180000 +0800" stop="20260818190000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818190000 +0800" stop="20260818200000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818200000 +0800" stop="20260818220000 +0800">
-		<title lang="zh">精彩节目</title>
-	</programme>
-	<programme channel="newtv超级电视剧" start="20260818220000 +0800" stop="20260818235900 +0800">
-		<title lang="zh">精彩节目</title>
+	<programme channel="newtv超级电视剧" start="20260818000300 +0800" stop="20260818005000 +0800">
+		<title lang="zh">14_很想很想你</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50742,5 +50721,4 @@
 	<programme channel="求索纪录" start="20260818220000 +0800" stop="20260818235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
