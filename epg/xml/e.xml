@@ -17280,6 +17280,9 @@
 	<programme channel="咪咕综合体育" start="20260829051500 +0800" stop="20260829075000 +0800">
 		<title lang="zh">JCK王者系列第012期</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260829080000 +0800" stop="20260829082000 +0800">
+		<title lang="zh">咪咕体育日报直播</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -58845,6 +58848,9 @@
 	<programme channel="newtv金牌综艺" start="20260829072100 +0800" stop="20260829075100 +0800">
 		<title lang="zh">青稞饼好物推荐</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260829075100 +0800" stop="20260829083200 +0800">
+		<title lang="zh">27_烽烟尽处</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -59196,5 +59202,4 @@
 	<programme channel="求索纪录" start="20260829220000 +0800" stop="20260829235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
