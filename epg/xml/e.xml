@@ -49881,6 +49881,9 @@
 	<programme channel="newtv超级综艺" start="20260902013900 +0800" stop="20260902022400 +0800">
 		<title lang="zh">29_北上广不相信眼泪</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260902022400 +0800" stop="20260902030900 +0800">
+		<title lang="zh">30_北上广不相信眼泪</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -49890,11 +49893,17 @@
 	<programme channel="newtv超级体育" start="20260902010600 +0800" stop="20260902023600 +0800">
 		<title lang="zh">国际足球赛场-26-27赛季英超联赛第1轮 曼城-伯恩茅斯(4K)</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260902023600 +0800" stop="20260902040000 +0800">
+		<title lang="zh">实况录像-2025/2026赛季中国男子篮球职业联赛 总决赛 5</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
 	<programme channel="newtv超级电影" start="20260902005900 +0800" stop="20260902023400 +0800">
 		<title lang="zh">燕赤霞猎妖传</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20260902023400 +0800" stop="20260902035600 +0800">
+		<title lang="zh">梦想之门</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -50466,6 +50475,9 @@
 	<programme channel="newtv金牌综艺" start="20260902015400 +0800" stop="20260902023800 +0800">
 		<title lang="zh">27_秋蝉</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260902023800 +0800" stop="20260902032100 +0800">
+		<title lang="zh">28_秋蝉</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -50817,5 +50829,4 @@
 	<programme channel="求索纪录" start="20260902220000 +0800" stop="20260902235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
