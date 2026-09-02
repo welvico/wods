@@ -16272,6 +16272,15 @@
 	<programme channel="咪咕综合体育" start="20260903005500 +0800" stop="20260903032000 +0800">
 		<title lang="zh">UFC第330期 主赛</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260903032500 +0800" stop="20260903035000 +0800">
+		<title lang="zh">中超精华 第25轮</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20260903035000 +0800" stop="20260903040000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20260903040000 +0800" stop="20260903063500 +0800">
+		<title lang="zh">2026江苏银行南京半程马拉松</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -16292,6 +16301,9 @@
 	</programme>
 	<programme channel="咪咕足球" start="20260903022000 +0800" stop="20260903035500 +0800">
 		<title lang="zh">NBL城燃之战-25/26赛季 常规赛第22轮 贵州猛龙-盐南苏科雄狮</title>
+	</programme>
+	<programme channel="咪咕足球" start="20260903035500 +0800" stop="20260903040500 +0800">
+		<title lang="zh">频道宣传</title>
 	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
@@ -50136,6 +50148,9 @@
 	<programme channel="newtv超级综艺" start="20260903024400 +0800" stop="20260903032800 +0800">
 		<title lang="zh">35_北上广不相信眼泪</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260903032800 +0800" stop="20260903041300 +0800">
+		<title lang="zh">36_北上广不相信眼泪</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -50147,6 +50162,9 @@
 	</programme>
 	<programme channel="newtv超级体育" start="20260903023600 +0800" stop="20260903040000 +0800">
 		<title lang="zh">实况录像-2025/2026赛季中国男子篮球职业联赛 半决赛 1</title>
+	</programme>
+	<programme channel="newtv超级体育" start="20260903040000 +0800" stop="20260903060000 +0800">
+		<title lang="zh">实况录像-2026年汤姆斯杯羽毛球赛 决赛</title>
 	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
@@ -50174,6 +50192,9 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260903023300 +0800" stop="20260903031900 +0800">
 		<title lang="zh">28_问心</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260903031900 +0800" stop="20260903040400 +0800">
+		<title lang="zh">29_问心</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50739,6 +50760,12 @@
 	<programme channel="newtv金牌综艺" start="20260903024100 +0800" stop="20260903031100 +0800">
 		<title lang="zh">杏花村好物推荐</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260903031100 +0800" stop="20260903035500 +0800">
+		<title lang="zh">34_秋蝉</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260903035500 +0800" stop="20260903043900 +0800">
+		<title lang="zh">35_秋蝉</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -51090,5 +51117,4 @@
 	<programme channel="求索纪录" start="20260903220000 +0800" stop="20260903235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
