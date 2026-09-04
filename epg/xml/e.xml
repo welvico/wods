@@ -15912,6 +15912,9 @@
 	<programme channel="咪咕综合体育" start="20260905020000 +0800" stop="20260905022500 +0800">
 		<title lang="zh">中超精华 第25轮</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260905023000 +0800" stop="20260905051000 +0800">
+		<title lang="zh">英超赛场-26/27赛季 英超 第3轮 伊普斯维奇-利物浦 直播</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -15926,6 +15929,9 @@
 	</programme>
 	<programme channel="咪咕足球" start="20260905021000 +0800" stop="20260905022000 +0800">
 		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕足球" start="20260905022000 +0800" stop="20260905035500 +0800">
+		<title lang="zh">NBL城燃之战-25/26赛季 常规赛第26轮 长沙勇胜-香港金牛</title>
 	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
@@ -49764,17 +49770,29 @@
 	<programme channel="newtv超级综艺" start="20260905014600 +0800" stop="20260905023200 +0800">
 		<title lang="zh">02_种墨园</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260905023200 +0800" stop="20260905031700 +0800">
+		<title lang="zh">03_种墨园</title>
+	</programme>
+	<programme channel="newtv超级综艺" start="20260905031700 +0800" stop="20260905040300 +0800">
+		<title lang="zh">04_种墨园</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
 	<programme channel="newtv超级体育" start="20260905012200 +0800" stop="20260905024500 +0800">
 		<title lang="zh">国际足球赛场-26-27赛季英超联赛第2轮 考文垂城-赫尔城(4K)</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260905024500 +0800" stop="20260905040000 +0800">
+		<title lang="zh">实况录像-2026年亚洲女排锦标赛 半决赛 1</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
 	<programme channel="newtv超级电影" start="20260905011300 +0800" stop="20260905025400 +0800">
 		<title lang="zh">足球少年</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20260905025400 +0800" stop="20260905042200 +0800">
+		<title lang="zh">东北喜事之山炮扶上墙</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -49787,6 +49805,12 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260905021100 +0800" stop="20260905025600 +0800">
 		<title lang="zh">37_问心</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260905025600 +0800" stop="20260905034200 +0800">
+		<title lang="zh">38_问心</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260905034200 +0800" stop="20260905043200 +0800">
+		<title lang="zh">01_问心2</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50349,6 +50373,12 @@
 	<programme channel="newtv金牌综艺" start="20260905021100 +0800" stop="20260905025500 +0800">
 		<title lang="zh">43_秋蝉</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260905025500 +0800" stop="20260905032500 +0800">
+		<title lang="zh">杏花村好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260905032500 +0800" stop="20260905040900 +0800">
+		<title lang="zh">44_秋蝉</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -50700,5 +50730,4 @@
 	<programme channel="求索纪录" start="20260905220000 +0800" stop="20260905235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
