@@ -16377,6 +16377,9 @@
 	<programme channel="咪咕综合体育" start="20260911012000 +0800" stop="20260911034500 +0800">
 		<title lang="zh">2026LGCT浪琴环球马术冠军赛 里森贝克站LGCT团体赛</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260911034500 +0800" stop="20260911040000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -50160,6 +50163,9 @@
 	<programme channel="newtv超级综艺" start="20260911022000 +0800" stop="20260911030600 +0800">
 		<title lang="zh">06_照亮你</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260911030600 +0800" stop="20260911051000 +0800">
+		<title lang="zh">影视留声机</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -50192,6 +50198,12 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260911015900 +0800" stop="20260911024500 +0800">
 		<title lang="zh">29_问心2</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260911024500 +0800" stop="20260911033100 +0800">
+		<title lang="zh">30_问心2</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260911033100 +0800" stop="20260911041700 +0800">
+		<title lang="zh">31_问心2</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50751,6 +50763,12 @@
 	<programme channel="newtv金牌综艺" start="20260911015900 +0800" stop="20260911024500 +0800">
 		<title lang="zh">22_孤战</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260911024500 +0800" stop="20260911031500 +0800">
+		<title lang="zh">杏花村好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260911031500 +0800" stop="20260911040100 +0800">
+		<title lang="zh">23_孤战</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -51102,5 +51120,4 @@
 	<programme channel="求索纪录" start="20260911220000 +0800" stop="20260911235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
