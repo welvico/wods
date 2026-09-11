@@ -15993,6 +15993,9 @@
 	<programme channel="咪咕综合体育" start="20260912023000 +0800" stop="20260912025500 +0800">
 		<title lang="zh">中超精华 第26轮</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260912030000 +0800" stop="20260912053000 +0800">
+		<title lang="zh">网球世界-2026美国网球公开赛 男单半决赛 第1场 直播</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -49656,6 +49659,9 @@
 	<programme channel="newtv超级综艺" start="20260912021800 +0800" stop="20260912030400 +0800">
 		<title lang="zh">11_照亮你</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260912030400 +0800" stop="20260912034900 +0800">
+		<title lang="zh">12_照亮你</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -49677,6 +49683,9 @@
 	<programme channel="newtv超级电影" start="20260912020700 +0800" stop="20260912033700 +0800">
 		<title lang="zh">鲨卷风2</title>
 	</programme>
+	<programme channel="newtv超级电影" start="20260912033700 +0800" stop="20260912050600 +0800">
+		<title lang="zh">夺宝家庭</title>
+	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
 	</channel>
@@ -49691,6 +49700,9 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260912022100 +0800" stop="20260912030700 +0800">
 		<title lang="zh">35_问心2</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260912030700 +0800" stop="20260912035300 +0800">
+		<title lang="zh">36_问心2</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50250,6 +50262,12 @@
 	<programme channel="newtv金牌综艺" start="20260912015600 +0800" stop="20260912024100 +0800">
 		<title lang="zh">27_孤战</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260912024100 +0800" stop="20260912031100 +0800">
+		<title lang="zh">杏花村好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260912031100 +0800" stop="20260912035700 +0800">
+		<title lang="zh">28_孤战</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -50601,5 +50619,4 @@
 	<programme channel="求索纪录" start="20260912220000 +0800" stop="20260912235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
