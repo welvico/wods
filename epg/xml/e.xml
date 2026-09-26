@@ -14496,6 +14496,12 @@
 	<programme channel="咪咕综合体育" start="20260927002000 +0800" stop="20260927033000 +0800">
 		<title lang="zh">一杆定音-2026斯诺克武汉公开赛 决赛 第二阶段 赵心童-常冰玉</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20260927033500 +0800" stop="20260927040000 +0800">
+		<title lang="zh">中超精华 第16轮</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20260927040500 +0800" stop="20260927045500 +0800">
+		<title lang="zh">世界杯精华</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -14513,6 +14519,12 @@
 	</programme>
 	<programme channel="咪咕足球" start="20260927022000 +0800" stop="20260927035500 +0800">
 		<title lang="zh">NBL城燃之战-25/26赛季 季后赛半决赛G3 香港金牛-江西鲸裕清酒</title>
+	</programme>
+	<programme channel="咪咕足球" start="20260927035500 +0800" stop="20260927040500 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕足球" start="20260927040500 +0800" stop="20260927044000 +0800">
+		<title lang="zh">西班牙篮球黄金一代05 接班人们</title>
 	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
@@ -42825,6 +42837,12 @@
 	<programme channel="newtv超级综艺" start="20260927022500 +0800" stop="20260927031100 +0800">
 		<title lang="zh">27_好团圆</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20260927031100 +0800" stop="20260927035600 +0800">
+		<title lang="zh">28_好团圆</title>
+	</programme>
+	<programme channel="newtv超级综艺" start="20260927035600 +0800" stop="20260927054900 +0800">
+		<title lang="zh">影视留声机</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -42834,6 +42852,12 @@
 	<programme channel="newtv超级体育" start="20260927010600 +0800" stop="20260927023600 +0800">
 		<title lang="zh">国际足球赛场-26-27赛季法甲联赛第3轮 巴黎圣日耳曼-摩纳哥(4K)</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20260927023600 +0800" stop="20260927040000 +0800">
+		<title lang="zh">实况录像-2025/2026赛季中国男子篮球职业联赛 半决赛 8</title>
+	</programme>
+	<programme channel="newtv超级体育" start="20260927040000 +0800" stop="20260927053000 +0800">
+		<title lang="zh">实况录像-2026年世界田联钻石联赛 布鲁塞尔站 2</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -42842,6 +42866,9 @@
 	</programme>
 	<programme channel="newtv超级电影" start="20260927015600 +0800" stop="20260927033800 +0800">
 		<title lang="zh">养蜂人</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20260927033800 +0800" stop="20260927045500 +0800">
+		<title lang="zh">神都蜜探</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -42854,6 +42881,12 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20260927015400 +0800" stop="20260927024000 +0800">
 		<title lang="zh">33_主角</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260927024000 +0800" stop="20260927032700 +0800">
+		<title lang="zh">34_主角</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20260927032700 +0800" stop="20260927041400 +0800">
+		<title lang="zh">35_主角</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -43419,6 +43452,12 @@
 	<programme channel="newtv金牌综艺" start="20260927023000 +0800" stop="20260927031400 +0800">
 		<title lang="zh">33_烽烟尽处</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20260927031400 +0800" stop="20260927034400 +0800">
+		<title lang="zh">白水杜康好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20260927034400 +0800" stop="20260927042900 +0800">
+		<title lang="zh">34_烽烟尽处</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -43692,5 +43731,4 @@
 	<programme channel="求索纪录" start="20260927220000 +0800" stop="20260927235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
