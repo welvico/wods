@@ -16131,6 +16131,15 @@
 	<programme channel="咪咕综合体育" start="20261004015500 +0800" stop="20261004033500 +0800">
 		<title lang="zh">纪录片杰拉德：成就梦想</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20261004033500 +0800" stop="20261004034000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20261004034000 +0800" stop="20261004040500 +0800">
+		<title lang="zh">中超精华 第6轮</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20261004040500 +0800" stop="20261004041000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -16142,6 +16151,9 @@
 	</programme>
 	<programme channel="咪咕足球" start="20261004022000 +0800" stop="20261004035500 +0800">
 		<title lang="zh">NBL城燃之战-25/26赛季 常规赛第24轮 香港金牛-张家口体文旅</title>
+	</programme>
+	<programme channel="咪咕足球" start="20261004040500 +0800" stop="20261004044000 +0800">
+		<title lang="zh">西班牙篮球黄金一代05 接班人们</title>
 	</programme>
 	<channel id="四大名著剧场">
 		<display-name lang="zh">四大名著剧场</display-name>
@@ -49686,6 +49698,9 @@
 	<programme channel="newtv超级综艺" start="20261004023600 +0800" stop="20261004032000 +0800">
 		<title lang="zh">32_最好的时代</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20261004032000 +0800" stop="20261004045600 +0800">
+		<title lang="zh">影视留声机</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -49698,6 +49713,9 @@
 	<programme channel="newtv超级体育" start="20261004023600 +0800" stop="20261004040000 +0800">
 		<title lang="zh">实况录像-2025/2026赛季中国男子篮球职业联赛 半决赛 2</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20261004040000 +0800" stop="20261004053000 +0800">
+		<title lang="zh">实况录像-2026年世界田联钻石联赛 尤金站</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -49706,6 +49724,9 @@
 	</programme>
 	<programme channel="newtv超级电影" start="20261004013700 +0800" stop="20261004025300 +0800">
 		<title lang="zh">毒战生死线2</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20261004025300 +0800" stop="20261004041100 +0800">
+		<title lang="zh">澡堂也疯狂</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -49721,6 +49742,12 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20261004021900 +0800" stop="20261004030500 +0800">
 		<title lang="zh">21_青山是故乡</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20261004030500 +0800" stop="20261004035100 +0800">
+		<title lang="zh">22_青山是故乡</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20261004035100 +0800" stop="20261004043700 +0800">
+		<title lang="zh">02_四喜</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -50283,6 +50310,15 @@
 	<programme channel="newtv金牌综艺" start="20261004020600 +0800" stop="20261004025100 +0800">
 		<title lang="zh">29_风声</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20261004025100 +0800" stop="20261004032100 +0800">
+		<title lang="zh">白水杜康好物推荐</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20261004032100 +0800" stop="20261004040600 +0800">
+		<title lang="zh">30_风声</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20261004040600 +0800" stop="20261004045000 +0800">
+		<title lang="zh">31_风声</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -50628,5 +50664,4 @@
 	<programme channel="求索纪录" start="20261004220000 +0800" stop="20261004235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
