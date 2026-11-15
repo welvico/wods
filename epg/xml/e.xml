@@ -40446,6 +40446,9 @@
 	<programme channel="newtv超级综艺" start="20261116034700 +0800" stop="20261116044700 +0800">
 		<title lang="zh">影视留声机</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20261116044700 +0800" stop="20261116063100 +0800">
+		<title lang="zh">第二届丝路之星国际音乐大赛</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -40461,6 +40464,12 @@
 	<programme channel="newtv超级体育" start="20261116040000 +0800" stop="20261116053000 +0800">
 		<title lang="zh">世界田联钻石联赛-斯德哥尔摩站</title>
 	</programme>
+	<programme channel="newtv超级体育" start="20261116053000 +0800" stop="20261116060000 +0800">
+		<title lang="zh">精品赛事记录-射箭世界杯墨西哥站</title>
+	</programme>
+	<programme channel="newtv超级体育" start="20261116060000 +0800" stop="20261116063000 +0800">
+		<title lang="zh">英超-第3轮集锦</title>
+	</programme>
 	<channel id="newtv超级电影">
 		<display-name lang="zh">NEWTV超级电影</display-name>
 	</channel>
@@ -40472,6 +40481,9 @@
 	</programme>
 	<programme channel="newtv超级电影" start="20261116040400 +0800" stop="20261116053400 +0800">
 		<title lang="zh">高考那年遇见你</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20261116053400 +0800" stop="20261116065800 +0800">
+		<title lang="zh">飞鱼服</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -40493,6 +40505,12 @@
 	</programme>
 	<programme channel="newtv超级电视剧" start="20261116040600 +0800" stop="20261116045000 +0800">
 		<title lang="zh">44_林海雪原</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20261116045000 +0800" stop="20261116053500 +0800">
+		<title lang="zh">45_林海雪原</title>
+	</programme>
+	<programme channel="newtv超级电视剧" start="20261116053500 +0800" stop="20261116062000 +0800">
+		<title lang="zh">46_林海雪原</title>
 	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
@@ -41061,6 +41079,15 @@
 	<programme channel="newtv金牌综艺" start="20261116040800 +0800" stop="20261116043800 +0800">
 		<title lang="zh">珍膳私享特膳粉第5期</title>
 	</programme>
+	<programme channel="newtv金牌综艺" start="20261116043800 +0800" stop="20261116052300 +0800">
+		<title lang="zh">29_风声</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20261116052300 +0800" stop="20261116060900 +0800">
+		<title lang="zh">07_孤战</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20261116060900 +0800" stop="20261116063900 +0800">
+		<title lang="zh">珍膳私享特膳粉第5期</title>
+	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
 	</channel>
@@ -41334,5 +41361,4 @@
 	<programme channel="求索纪录" start="20261116220000 +0800" stop="20261116235900 +0800">
 		<title lang="zh">精彩节目</title>
 	</programme>
-
 </tv>
